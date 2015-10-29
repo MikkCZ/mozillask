@@ -63,7 +63,7 @@ $tb=get_newprodukt('thunderbird','verzia');
 		else if ($verzia == '1.4.1') $vysledok='1.5b2';
 		else if (($verzia >= '1.6') && ($verzia < '2.0')) $vysledok='<acronym title="testovacia verzia pred verziou 2.0">Bon Echo</acronym>';
 //		else if(($verzia > $fx)&&($verzia!='2.0.0.*')) $vysledok=$fx.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
-		else if($verzia > '3.0pre') $vysledok=$fx.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
+//		else if($verzia < '3.5pre') $vysledok=$fx.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
 		else $vysledok=$verzia;
 	}
 	else
@@ -91,6 +91,9 @@ if($urlid == "")
 
 	<div class="entrytext">
 	Rozšírenia sú balíky, ktoré sa <a href="/rozsirenia/instalacia-rozsireni/">inštalujú</a> do aplikácií od <a href="http://www.mozilla.org" hreflang="en">Mozilly</a> a odvodených a pridávajú im nové funkcie. Ponúkame vám ich slovenské lokalizácie roztriedené podľa jednotlivých produktov. Všetky rozšírenia lokalizované do slovenčiny musia byť nainštalované do <strong>slovenskej</strong> verzie programu, inak nebudú fungovať v slovenskom jazyku. 
+	<br/><br/>
+	<div class="upozornenie"><b>Dôležité:</b> Databáza rozšírení umiestnených na serveri <b>Mozilla.sk</b> nie je momentálne aktualizovaná a je dostupná len na archívne účely. Plnohodnotná náhrada sa nachádza na stránke <a href="https://addons.mozilla.org/sk/"><b>addons.mozilla.org</b></a>.</div> 
+	<br/>
 	<div class="post-top">
 		<div class="post-bottom">
 			<div class="post">
@@ -391,14 +394,18 @@ vypis stranky rozsirenia
 				
 				<?php if ($poznamka): ?><div class="error"><?php echo $poznamka ?></div><?php endif; ?>
 				
+
+	<div class="upozornenie"><b>Dôležité:</b> Databáza rozšírení umiestnených na serveri <b>Mozilla.sk</b> nie je momentálne aktualizovaná a je dostupná len na archívne účely. Plnohodnotná náhrada sa nachádza na stránke <a href="https://addons.mozilla.org/sk/"><b>addons.mozilla.org</b></a>.<br/><br/>
+  					<?php if ($addon): ?> &raquo; <a href="https://addons.mozilla.org/sk/addon/<?php echo $addon ?>/">Stránka rozšírenia <?php echo $nazov ?> na serveri Mozilla Add-ons</a><?php endif; ?>
+</div> 
+
 				<h3>Súvisiace odkazy</h3> 
 				<ul>
 					<li style="list-style-image: url('/wp-content/themes/mozillask/images/navod.gif')">Máte problém s inštaláciou rozšírenia? Prečítajte si náš <a href="/rozsirenia/instalacia-rozsireni/">návod</a>.</li>
-					<li style="list-style-image: url('/wp-content/themes/mozillask/images/forum.gif')">Máte otázku týkajúcu sa tohto rozšírenia? Napíšte nám do <a href="http://forum.mozilla.sk/viewforum.php?f=<?php echo $forum ?>">fóra</a>.</li>
-					<li style="list-style-image: url('/wp-content/themes/mozillask/images/chyba.gif')">Našli ste nejakú chybu v&nbsp;preklade tohto rozšírenia? <a href="http://forum.mozilla.sk/viewtopic.php?t=<?php echo $nahlasit ?>">Nahláste nám ju!</a></li>
+					<li style="list-style-image: url('/wp-content/themes/mozillask/images/forum.gif')">Máte otázku týkajúcu sa tohto rozšírenia? Napíšte nám do <a href="http://forum.mozilla.sk/viewtopic.php?t=<?php echo $nahlasit ?>">fóra!</a></li>
 					<?php if ($homepage): ?><li style="list-style-image: url('/wp-content/themes/mozillask/images/domov.gif')"><a href="<?php echo $homepage.'"'; if (($lokalizuje!='Codik')&&($lokalizuje!='Michal Paulovič')&&($urlid!='update-scanner')) echo ' hreflang="en"' ?> >Oficiálna stránka rozšírenia <?php echo $nazov ?></a></li><?php endif; ?>
-					<?php if ($czilla): ?><li style="list-style-image: url('/wp-content/plugins/mozsk-rozsirenia/czilla.gif')"><a href="http://www.czilla.cz/doplnky/rozsireni/<?php echo $czilla ?>" hreflang="cs">Česká lokalizácia rozšírenia <?php echo $nazov ?></a></li><?php endif; ?>
-					<?php if ($addon): ?><li style="list-style-image: url('/mozilla-16.png')"><a href="https://addons.mozilla.org/extensions/moreinfo.php?id=<?php echo $addon ?>">Stránka rozšírenia na serveri Mozilla Add-ons</a></li><?php endif; ?>
+					<?php /*if ($czilla): ?><li style="list-style-image: url('/wp-content/plugins/mozsk-rozsirenia/czilla.gif')"><a href="http://www.czilla.cz/doplnky/rozsireni/<?php echo $czilla ?>" hreflang="cs">Česká lokalizácia rozšírenia <?php echo $nazov ?></a></li><?php endif;*/ ?>
+					<?php if ($addon): ?><li style="list-style-image: url('/mozilla-16.png')"><a href="https://addons.mozilla.org/sk/addon/<?php echo $addon ?>/">Stránka rozšírenia na serveri Mozilla Add-ons</a></li><?php endif; ?>
 				</ul>
 
 

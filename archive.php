@@ -39,8 +39,8 @@
 
 
 		<div class="navigation">
-			<div class="alignleft"><?php posts_nav_link('','','&laquo; Staršie články') ?></div>
-			<div class="alignright"><?php posts_nav_link('','Novšie články &raquo;','') ?></div>
+			<div class="alignleft"><?php next_posts_link('&laquo; Staršie články',0) ?></div>
+			<div class="alignright"><?php previous_posts_link('Novšie články &raquo;',0) ?></div>
 		</div>
 
 		<?php while (have_posts()) : the_post(); ?>
@@ -66,8 +66,8 @@
 		<?php endwhile; ?>
 
 		<div class="navigation">
-			<div class="alignleft"><?php posts_nav_link('','','&laquo; Staršie články') ?></div>
-			<div class="alignright"><?php posts_nav_link('','Novšie články &raquo;','') ?></div>
+			<div class="alignleft"><?php next_posts_link('&laquo; Staršie články',0) ?></div>
+			<div class="alignright"><?php previous_posts_link('Novšie články &raquo;',0) ?></div>
 		</div>
 	
 	<?php else : ?>

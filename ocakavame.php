@@ -1,14 +1,16 @@
-<b>31. júl 2009</b>
+<b>27. októbra</b>
 <ul>
-<li class="ico-fx">Firefox 3.6 alpha 1</li>
+<li class="ico-fx">Firefox 3.5.4</li>
+<li class="ico-ff">Firefox 3.0.15</li>
 </ul>
 <br/>
-<b>August 2009</b>
+<b>28. októbra</b>
 <ul>
-<li class="ico-fx">Firefox 3.5.2</li>
+<li class="ico-fx">Firefox 3.6 b1</li>
 </ul>
 <br/>
-<b>September</b>
+<b>November</b>
 <ul>
-<li class="ico-ff">Firefox 3.0.13</li>
+<li class="ico-fx">Firefox 3.6</li>
+<li class="ico-tb">Thunderbird 3.0</li>
 </ul>

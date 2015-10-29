@@ -78,13 +78,13 @@
 <?php else : ?>
 
 <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-<label for="author"><small>Meno <?php if ($req) _e('(required)'); ?></small></label></p>
+<label for="author"><small>Meno <?php if ($req) echo('(povinné)'); ?></small></label></p>
 
 <p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-<label for="email"><small>E-mail (nezverejní sa) <?php if ($req) _e('(required)'); ?></small></label></p>
+<label for="email"><small>E-mail (nezverejní sa) <?php if ($req) echo('(povinné)'); ?></small></label></p>
 
 <p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-<label for="url"><small>Website</small></label></p>
+<label for="url"><small>Webová stránka</small></label></p>
 
 <?php endif; ?>
 

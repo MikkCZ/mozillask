@@ -27,7 +27,9 @@ Template Name: Download
 				<?php get_dlpage('firefox') ?>
 	
 			</div>
-			<p style="margin-left: 10px; margin-right: 10px;">Nové verzie <b>Firefoxu 3.0</b> nájdete v našom <a href="/download/archiv-firefoxu/">archíve</a>. Firefox 3.0 bude podporovaný do <b>31. decembra 2009</b>.</p>
+      <!--
+			<p style="margin-left: 10px; margin-right: 10px;">Nové verzie <b>Firefoxu</b> nájdete v našom <a href="/download/archiv-firefoxu/">archíve</a>.</p>
+      -->
 			</div>
 		</div>
 
@@ -56,6 +58,18 @@ Template Name: Download
 			</div>
 		</div>
 
+
+		<div id="seamonkey" class="dl-tb-top">
+			<div class="dl-tb-bottom">
+			<div class="dl-blob dl-sm-logo">
+				
+				<h2 id="dl-sm-logotype">SeaMonkey</h2>
+
+				<?php get_dlpage('seamonkey') ?>
+	
+			</div>
+			</div>
+		</div>
 
 		<div id="flock" class="dl-cm-top">
 			<div class="dl-cm-bottom">

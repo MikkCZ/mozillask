@@ -35,6 +35,7 @@ body {
 
 #header {
 	background: #788baf url(/wp-content/themes/mozillask/images/header_mozsk4.png) no-repeat; 
+/*	background: #788baf url(/wp-content/themes/mozillask/images/header_mozsk_vianoce_univer.png) no-repeat;*/
 	padding: 0;
 	margin: 0 auto;
 	height: 100px;
@@ -622,6 +623,13 @@ p img
 	will of course center the image. This is much better than using
 	align="center", being much more futureproof (and valid) */
 
+.aligncenter
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 img.centered
 {
 	display: block;
@@ -740,6 +748,7 @@ p.screen
 .nadpis
 {
 	background-color: #F1F4FB;
+  color: rgb(49,73,122);
 	font-weight: bold;
 	margin-bottom: 0px;
 	padding-bottom: 3px;
@@ -747,6 +756,7 @@ p.screen
 	border-bottom: 1px solid #CCD9F2;
 	border-left: 1px solid #CCD9F2;
 	border-right: 1px solid #CCD9F2;
+	text-align: center; 
 }
 
 .nadpis img
@@ -778,11 +788,10 @@ p.screen
 	margin: 0;
 	padding: 2px;
 }
-
 .infopanel li
 {
-  margin-top: 0px;
-  padding: 2px 0px 2px 0px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .infopanel p
@@ -1209,7 +1218,7 @@ div.error
 .upozornenie
 {
 	border: 1px solid rgb(128, 0, 0);
-	-moz-border-radius: 10px;	
+	border-radius: 10px;	
 	background: rgb(255,206,206) url(/wp-content/images/warning.png) no-repeat;
 	background-position: 5px center;
 	padding: 10px 10px 10px 50px;
@@ -1226,7 +1235,7 @@ div.error
 .info
 {
 	border: 1px solid rgb(69, 146, 71);
-	-moz-border-radius: 10px;	
+	border-radius: 10px;	
 	background: #E8F9F2 url(/wp-content/images/info.png) no-repeat;
 	background-position: 5px center;
 	padding: 10px 10px 10px 50px;
@@ -1235,7 +1244,7 @@ div.error
 .dl_info
 {
 	border: 1px solid rgb(69, 146, 71);
-	-moz-border-radius: 10px;
+	border-radius: 10px;
 	background: #E8F9F2 url(/wp-content/images/logo/install.png) no-repeat;
 	background-position: 10px center;
   padding-top: 10px;	
@@ -1306,8 +1315,12 @@ div.error
   background: rgb(213, 225, 238) url('/wp-content/images/logo/fox35_bg.png') no-repeat scroll left top;
 }
 
-.thunderbird_arch {
+.thunderbird2_arch {
   background: rgb(213, 225, 238) url('/wp-content/images/logo/tb_bg.gif') no-repeat scroll left top;
+}
+
+.thunderbird_arch {
+  background: rgb(213, 225, 238) url('/wp-content/images/logo/tb3_bg.png') no-repeat scroll left top;
 }
 
 .sunbird_arch {
@@ -1378,75 +1391,98 @@ div.error
 	padding-right: 5px;
 }
 
-.ico-win, .ico-lin, .ico-mac, .ico-ff, .ico-fx, .ico-tb, .ico-ms, .ico-nvu, .ico-sn, .ico-ns, .ico-sm, .ico-fl, .ico-sng
+.ico-win, .ico-lin, .ico-mac, .ico-ff, .ico-fx, .ico-tb, .ico-ms, .ico-nvu, .ico-sn, .ico-ns, .ico-sm, .ico-fn, .ico-fl, .ico-sng
 {
-	list-style-position: inside;
+	/*list-style-position: inside;
+	list-style-type: none;*/
+	background-repeat: no-repeat;
+	background-position: left;
+	padding: 2px 0 2px 20px;
+	display: block;
 }
 
 .ico-win
 {
-	list-style-image: url('/wp-content/images/logo/win_small.png');
+/*	list-style-image: url('/wp-content/images/logo/win_small.png');*/
+	background-image: url('/wp-content/images/logo/win_small.png');
 }
 
 .ico-lin
 {
-	list-style-image: url('/wp-content/images/logo/lin_small.png');
+/*	list-style-image: url('/wp-content/images/logo/lin_small.png');*/
+	background-image: url('/wp-content/images/logo/lin_small.png');
 }
 
 .ico-mac
 {
-	list-style-image: url('/wp-content/images/logo/mac_small.png');
+	/*list-style-image: url('/wp-content/images/logo/mac_small.png');*/
+	background-image: url('/wp-content/images/logo/mac_small.png');
 }
 
 .ico-ff
 {
-	list-style-image: url('/wp-content/images/logo/ff_small.png');
+	/*list-style-image: url('/wp-content/images/logo/ff_small.png');*/
+	background-image: url('/wp-content/images/logo/ff_small.png');
 }
 
 .ico-fx
 {
-	list-style-image: url('/wp-content/images/logo/fx_small.png');
+/*	list-style-image: url('/wp-content/images/logo/fx_small.png');*/
+	background-image: url('/wp-content/images/logo/fx_small.png');
 }
 
 .ico-tb
 {
-	list-style-image: url('/wp-content/images/logo/tb_small.png');
+/*	list-style-image: url('/wp-content/images/logo/tb_small.png');*/
+	background-image: url('/wp-content/images/logo/tb_small.png');
 }
 
 .ico-ms
 {
-	list-style-image: url('/wp-content/images/logo/ms_small.png');
+/*	list-style-image: url('/wp-content/images/logo/ms_small.png');*/
+	background-image: url('/wp-content/images/logo/ms_small.png');
 }
 
 .ico-nvu
 {
-	list-style-image: url('/wp-content/images/logo/nvu_small.png');
+/*	list-style-image: url('/wp-content/images/logo/nvu_small.png');*/
+	background-image: url('/wp-content/images/logo/nvu_small.png');
 }
 
 .ico-sn
 {
-	list-style-image: url('/wp-content/images/logo/sn_small.png');
+/*	list-style-image: url('/wp-content/images/logo/sn_small.png');*/
+	background-image: url('/wp-content/images/logo/sn_small.png');
 }
 
 .ico-ns
 {
-	list-style-image: url('/wp-content/images/logo/ns_small.png');
-	vertical-align: middle;
+/*	list-style-image: url('/wp-content/images/logo/ns_small.png');*/
+	background-image: url('/wp-content/images/logo/ns_small.png');
 }
 
 .ico-sm
 {
-	list-style-image: url('/wp-content/images/logo/sm_small.png');
+/*	list-style-image: url('/wp-content/images/logo/sm_small.png');*/
+	background-image: url('/wp-content/images/logo/sm_small.png');
+}
+
+.ico-fn
+{
+/*	list-style-image: url('/wp-content/images/logo/fennec-16.png');*/
+	background-image: url('/wp-content/images/logo/fennec-16.png');
 }
 
 .ico-fl
 {
-	list-style-image: url('/wp-content/images/logo/fl_small.png');
+/*	list-style-image: url('/wp-content/images/logo/fl_small.png');*/
+	background-image: url('/wp-content/images/logo/fl_small.png');
 }
 
 .ico-sng
 {
-	list-style-image: url('/wp-content/images/logo/sng_small.png');
+/*	list-style-image: url('/wp-content/images/logo/sng_small.png');*/
+	background-image: url('/wp-content/images/logo/sng_small.png');
 }
 
 #product
@@ -1726,13 +1762,13 @@ table {
 	text-indent: -700em;
 }
 
-.dl-ff-top, .dl-tb-top, .dl-sb-top, .dl-cm-top, .dl-nv-top
+.dl-ff-top, .dl-tb-top, .dl-sb-top, .dl-cm-top, .dl-nv-top, .dl-sm-top
 {
 	padding: 11px 0 0 0;
 	margin: 0;
 }
 
-.dl-ff-bottom, .dl-tb-bottom, .dl-sb-bottom, .dl-cm-bottom, .dl-nv-bottom
+.dl-ff-bottom, .dl-tb-bottom, .dl-sb-bottom, .dl-cm-bottom, .dl-nv-bottom, .dl-sm-bottom
 {
 	padding: 0 0 11px 0;
 	margin: 0 0 15px 0;
@@ -1766,6 +1802,11 @@ h2#dl-fl-logotype
 h2#dl-nv-logotype
 {
 	background: url(/wp-content/themes/mozillask/images/dl-nv-logotype.png) no-repeat;
+}
+
+h2#dl-sm-logotype
+{
+	background: url(/wp-content/themes/mozillask/images/dl-sm-logotype.png) no-repeat;
 }
 
 .dl-ff-top
@@ -1825,7 +1866,7 @@ h2#dl-nv-logotype
 
 .dl-tb-logo
 {
-	background: transparent url(/wp-content/themes/mozillask/images/dl-tb-logo.png) no-repeat top right;
+	background: transparent url(/wp-content/themes/mozillask/images/dl-tb3-logo.png) no-repeat top right;
 }
 
 .dl-sb-logo
@@ -1846,6 +1887,11 @@ h2#dl-nv-logotype
 .dl-nv-logo
 {
 	background: transparent url(/wp-content/themes/mozillask/images/dl-nv-logo.png) no-repeat top right;
+}
+
+.dl-sm-logo
+{
+	background: transparent url(/wp-content/themes/mozillask/images/dl-sm-logo.png) no-repeat top right;
 }
 
 .dl-sng-logo
@@ -2008,5 +2054,15 @@ dl.old-versions dd
   background: #fff;
 }
 
+div#twitter>p.twitter-message:not(:first-child) {
+  border-top: 1px solid rgb(173,182,202);
+}
 
+.twitter-timestamp {
+  color: #777;
+}
+
+.dnes {
+  color: #CC0000;
+}
 /* End SITEMAP */

@@ -1,10 +1,14 @@
-﻿<?php
+<?php
 /*
 Template Name: Rozsirenia
 */
 get_header();
+
 $folder = '/rozsirenia/';
+$server = '/home/epicnet/mozilla.sk';
 ?>
+<?php $is_rozsirenia=1; get_sidebar(); ?>
+
 <div id="content" class="narrowcolumn">
 <?php
 $wpdb->hide_errors();
@@ -41,13 +45,15 @@ return $vysledok;
 
 function formatverziu($verzia, $produkt)
 {
-$fx='2.0.0.1';
-$tb='1.5.0.9';
+$fx=get_newprodukt('firefox','verzia');
+//$tb=get_newprodukt('thunderbird','verzia');
+$tb=get_newprodukt('thunderbird','verzia');
 	if ($produkt=='tb') {
 		
 		if ($verzia == '1.4' || $verzia == '1.4.0') $vysledok='1.5b1';
 		else if ($verzia == '1.4.1') $vysledok='1.5b2';
 		else if($verzia > $tb)  $vysledok=$tb.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
+		else if(($verzia > $tb)&&($verzia!='2.0.0.*')) $vysledok=$tb.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
 		else $vysledok=$verzia;
 	}
 	else if ($produkt=='ff')
@@ -57,7 +63,7 @@ $tb='1.5.0.9';
 		else if ($verzia == '1.4.1') $vysledok='1.5b2';
 		else if (($verzia >= '1.6') && ($verzia < '2.0')) $vysledok='<acronym title="testovacia verzia pred verziou 2.0">Bon Echo</acronym>';
 //		else if(($verzia > $fx)&&($verzia!='2.0.0.*')) $vysledok=$fx.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
-		else if($verzia > '2.0c') $vysledok=$fx.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
+		else if($verzia > '3.0pre') $vysledok=$fx.' <small><acronym title="verzia '.$verzia.'">(+ aktuálne nočné zostavenia)</acronym></small>';
 		else $vysledok=$verzia;
 	}
 	else
@@ -77,11 +83,6 @@ $folder = '/rozsirenia/';
 /*
 hlavna stranka rozsireni - start
 */
-if($urlid == "rss")
-{
-require("/home/epicnet/mozilla.sk/wp-content/plugins/mozsk-rozsirenia/rss.php");
-}
-else
 if($urlid == "")
 {
 	?>
@@ -93,22 +94,23 @@ if($urlid == "")
 	<div class="post-top">
 		<div class="post-bottom">
 			<div class="post">
-				<table border="0">
+				<table border="0" style="margin-bottom: 10px">
 					<tr>
-						<td>
+						<td style="padding-right: 35px; ">
 							<ul class="rozsirenia">
 								<li><img src="/wp-content/images/logo/firefox48.png" alt="Firefox" /> <a href="<?php echo $folder ?>firefox/">Rozšírenia pre Mozilla Firefox</a></li>
 								<li><img src="/wp-content/images/logo/thunderbird48.png" alt="Thunderbird" /> <a href="<?php echo $folder ?>thunderbird/">Rozšírenia pre Mozilla Thunderbird</a></li>
-								<li><img src="/wp-content/images/logo/ms48.png" alt="Mozilla Suite" /> <a href="<?php echo $folder ?>mozilla-suite/">Rozšírenia pre Mozilla Suite</a></li>
+								<li><img src="/wp-content/images/logo/sunbird48.png" alt="Sunbird" /> <a href="<?php echo $folder ?>mozilla-sunbird/">Rozšírenia pre Mozilla Sunbird</a></li>
 							</ul>
 						</td>
-						<td style="border-left: 1px solid rgb(180, 198, 215);">
+						<td style="border-left: 1px solid rgb(180, 198, 215); padding-left: 15px;">
 							<ul class="rozsirenia">
+								<li class="small"><img src="/wp-content/images/logo/ms_small.png" alt="Mozilla Suite" /> <a href="<?php echo $folder ?>mozilla-suite/">Mozilla Suite</a></li>
 								<li class="small"><img src="/wp-content/images/logo/nvu_small.png" alt="NVU" /> <a href="<?php echo $folder ?>nvu/">NVU</a></li>
-								<li class="small"><img src="/wp-content/images/logo/sn_small.png" alt="Sunbird" /> <a href="<?php echo $folder ?>sunbird/">Sunbird</a></li>
 								<li class="small"><img src="/wp-content/images/logo/ns_small.png" alt="Netscape" /> <a href="<?php echo $folder ?>netscape/">Netscape</a></li>
-								<li class="small"><img src="/wp-content/images/logo/sm_small.png" alt="Seamonkey" /> <a href="<?php echo $folder ?>seamonkey/">Seamonkey</a></li>
+								<li class="small"><img src="/wp-content/images/logo/sm_small.png" alt="SeaMonkey" /> <a href="<?php echo $folder ?>seamonkey/">SeaMonkey</a></li>
 								<li class="small"><img src="/wp-content/images/logo/fl_small.png" alt="Flock" /> <a href="<?php echo $folder ?>flock/">Flock</a></li>
+								<li class="small"><img src="/wp-content/images/logo/sng_small.png" alt="Songbird" /> <a href="<?php echo $folder ?>songbird/">Songbird</a></li>
 							</ul>	
 						</td>
 					</tr>
@@ -124,7 +126,7 @@ if($urlid == "")
 											mozsk_rozsirenia.kategoria, mozsk_roz_meta.kat_url, mozsk_roz_meta.kategoria, mozsk_roz_meta.id,
 											autor, mozsk_roz_localizator.lok_url, mozsk_roz_localizator.id, mozsk_roz_localizator.localizator
 										FROM mozsk_rozsirenia, mozsk_roz_meta, mozsk_roz_localizator
-										WHERE publikovat=1 AND starsie='' HAVING TO_DAYS(datum)>TO_DAYS(CURDATE())-7 AND mozsk_rozsirenia.kategoria=mozsk_roz_meta.id AND mozsk_rozsirenia.autor=mozsk_roz_localizator.id ORDER BY nazov ASC");
+										WHERE publikovat=1 AND starsie='' AND datum >= DATE_SUB(NOW(), INTERVAL 7 DAY) AND mozsk_rozsirenia.kategoria=mozsk_roz_meta.id AND mozsk_rozsirenia.autor=mozsk_roz_localizator.id ORDER BY nazov ASC");
 	if($rozsirenia)
 		{
 			echo '<h3 class="new2">Nové rozšírenia lokalizované do slovenčiny<br/><small>pridané za posledných 7 dní</small></h3>';
@@ -143,7 +145,7 @@ if($urlid == "")
 
 /* aktualizovane rozsirenia - vypis */
 
-    $ids = $wpdb->get_col("SELECT MAX(id) AS id FROM mozsk_rozsirenia WHERE publikovat=1 AND starsie!='' AND TO_DAYS(datum)>TO_DAYS(CURDATE())-7 GROUP BY nazov ORDER BY nazov ASC");
+    $ids = $wpdb->get_col("SELECT MAX(id) AS id FROM mozsk_rozsirenia WHERE publikovat=1 AND starsie!='' AND datum >= DATE_SUB(NOW(), INTERVAL 7 DAY) GROUP BY nazov ORDER BY nazov ASC");
 	if($ids)
 		{
 			echo '<h3 class="update2">Aktualizované rozšírenia<br/><small>za posledných 7 dní</small></h3>';
@@ -177,34 +179,34 @@ hlavna stranka rozsireni - end
 podstranky - filtre
 */
 
-else if (($urlid == "firefox") || ($urlid == "thunderbird") || ($urlid == "mozilla-suite")) 
+else if (($urlid == "firefox") || ($urlid == "thunderbird")) 
 {
-	include("/home/epicnet/mozilla.sk/wp-content/plugins/mozsk-rozsirenia/filter_main.php");
+	include($server."/wp-content/plugins/mozsk-rozsirenia/filter_main.php");
 }
 
-else if ($urlid == "nvu" || $urlid == "sunbird" || $urlid == "seamonkey" || $urlid == "flock" || $urlid == "netscape") 
+else if ($urlid == "nvu" || $urlid == "mozilla-sunbird" || $urlid == "mozilla-suite" || $urlid == "seamonkey" || $urlid == "flock" || $urlid == "netscape" || $urlid == "songbird") 
 {
-	include("/home/epicnet/mozilla.sk/wp-content/plugins/mozsk-rozsirenia/filter_minor.php");
+	include($server."/wp-content/plugins/mozsk-rozsirenia/filter_minor.php");
 }
 
 else if ($urlid == "kat") 
 {
-	include("/home/epicnet/mozilla.sk/wp-content/plugins/mozsk-rozsirenia/filter_kat.php");
+	include($server."/wp-content/plugins/mozsk-rozsirenia/filter_kat.php");
 }
 
 else if ($urlid == "lok") 
 {
-	include("/home/epicnet/mozilla.sk/wp-content/plugins/mozsk-rozsirenia/filter_lok.php");
+	include($server."/wp-content/plugins/mozsk-rozsirenia/filter_lok.php");
 }
 
 else if ($urlid == "pripravuje-sa") 
 {
-	include("/home/epicnet/mozilla.sk/wp-content/plugins/mozsk-rozsirenia/pripravuje-sa.php");
+	include($server."/wp-content/plugins/mozsk-rozsirenia/pripravuje-sa.php");
 }
 
 else if ($urlid == "vyhladavanie") 
 {
-	include("/home/epicnet/mozilla.sk/wp-content/plugins/mozsk-rozsirenia/vyhladavanie.php");
+	include($server."/wp-content/plugins/mozsk-rozsirenia/vyhladavanie.php");
 }
 
 else
@@ -218,9 +220,9 @@ vypis stranky rozsirenia
 	if ($ver=='test' && ($user_ID))
 	$rozsirenie = $wpdb->get_row("SELECT * FROM mozsk_rozsirenia, mozsk_roz_meta, mozsk_roz_localizator WHERE publikovat=0 AND urlid='$urlid' AND mozsk_rozsirenia.kategoria=mozsk_roz_meta.id AND mozsk_rozsirenia.autor=mozsk_roz_localizator.id ORDER BY mozsk_rozsirenia.id DESC");
 	else if ($ver=='')
-	$rozsirenie = $wpdb->get_row("SELECT * FROM mozsk_rozsirenia, mozsk_roz_meta, mozsk_roz_localizator WHERE publikovat=1 AND urlid='$urlid' AND mozsk_rozsirenia.kategoria=mozsk_roz_meta.id AND mozsk_rozsirenia.autor=mozsk_roz_localizator.id ORDER BY mozsk_rozsirenia.id DESC");
+	$rozsirenie = $wpdb->get_row("SELECT * FROM mozsk_rozsirenia, mozsk_roz_meta, mozsk_roz_localizator WHERE publikovat!=0 AND publikovat!=2 AND urlid='$urlid' AND mozsk_rozsirenia.kategoria=mozsk_roz_meta.id AND mozsk_rozsirenia.autor=mozsk_roz_localizator.id ORDER BY mozsk_rozsirenia.id DESC");
 	else if ($ver!='test')
-	$rozsirenie = $wpdb->get_row("SELECT * FROM mozsk_rozsirenia, mozsk_roz_meta, mozsk_roz_localizator WHERE publikovat=1 AND urlid='$urlid' AND verzia='$ver' AND mozsk_rozsirenia.kategoria=mozsk_roz_meta.id AND mozsk_rozsirenia.autor=mozsk_roz_localizator.id ORDER BY mozsk_rozsirenia.id DESC");
+	$rozsirenie = $wpdb->get_row("SELECT * FROM mozsk_rozsirenia, mozsk_roz_meta, mozsk_roz_localizator WHERE publikovat!=0 AND publikovat!=2 AND urlid='$urlid' AND verzia='$ver' AND mozsk_rozsirenia.kategoria=mozsk_roz_meta.id AND mozsk_rozsirenia.autor=mozsk_roz_localizator.id ORDER BY mozsk_rozsirenia.id DESC");
 	else $rozsirenie="";
 	
 	if($rozsirenie)
@@ -257,6 +259,8 @@ vypis stranky rozsirenia
 		$urcene_nv_do = htmlspecialchars($rozsirenie->urcene_nv_do, ENT_QUOTES);
 		$urcene_fl_od = htmlspecialchars($rozsirenie->urcene_fl_od, ENT_QUOTES);
 		$urcene_fl_do = htmlspecialchars($rozsirenie->urcene_fl_do, ENT_QUOTES);
+		$urcene_sng_od = htmlspecialchars($rozsirenie->urcene_sng_od, ENT_QUOTES);
+		$urcene_sng_do = htmlspecialchars($rozsirenie->urcene_sng_do, ENT_QUOTES);
 
 		$ff = ($urcene_ff_od != '') || ($urcene_ff_do != '');
 		$tb = ($urcene_tb_od != '') || ($urcene_tb_do != '');
@@ -266,6 +270,7 @@ vypis stranky rozsirenia
 		$sb = ($urcene_sb_od != '') || ($urcene_sb_do != '');
 		$nv = ($urcene_nv_od != '') || ($urcene_nv_do != '');
 		$fl = ($urcene_fl_od != '') || ($urcene_fl_do != '');
+		$sng = ($urcene_sng_od != '') || ($urcene_sng_do != '');
 
 		$url = explode(',',$rozsirenie->url);
 		for ($i=0;$i<count($url);$i++)
@@ -288,12 +293,14 @@ vypis stranky rozsirenia
 		<div class="post-page">
 		<h2>Rozšírenie <?php echo $nazov ?></h2>
 			<div class="entrytext">
-				<p><?php echo $popis ?> Rozšírenie je zaradené do kategórie <a href="<?php echo $folder.'kat/'.$rozsirenie->kat_url.'/">'.$kategoria ?></a>.</p>
+					<?php	if ($rozsirenie->publikovat==3)	echo '<div class="info">Toto rozšírenie je určené pre staršie (už nepodporované) verzie programu.</div><dl>'; 		?>			
+		
+        <p><?php echo $popis ?> Rozšírenie je zaradené do kategórie <a href="<?php echo $folder.'kat/'.$rozsirenie->kat_url.'/">'.$kategoria ?></a>.</p>
 				<?php
 				
-				if(($obrazok!="") && (file_exists('/home/epicnet/mozilla.sk/wp-content/images/rozsirenia/'.$obrazok)))
+				if(($obrazok!="") && (file_exists($server.'/wp-content/images/rozsirenia/'.$obrazok)))
 					{
-						if (file_exists('/home/epicnet/mozilla.sk/wp-content/images/rozsirenia/t/'.$obrazok)) 
+						if (file_exists($server.'/wp-content/images/rozsirenia/t/'.$obrazok)) 
 							echo '<p><a href="?page_id=55&amp;mski=rozsirenia%2F'.$obrazok.'&amp;mskt='.urlencode('Rozšírenie '.$nazov).'"><img class="centered" src="/wp-content/images/rozsirenia/t/'.$obrazok.'" alt="'.$nazov.'" border="1"/></a></p>';
 						else
 							echo '<p><img src="/wp-content/images/rozsirenia/'.$obrazok.'" alt="Ukážka rozšírenia '.$nazov.'" title="Ukážka rozšírenia '.$nazov.'" class="centered" /></p>';
@@ -301,8 +308,9 @@ vypis stranky rozsirenia
 				?>
 				
 				<h3>Informácie o lokalizácii</h3>
+				<?php if ($addon != '') echo '<img class="alignright" src="/wp-content/themes/mozillask/images/peciatka.png" alt="peciatka" title="Umiestnené na serveri Mozilla Addons"/>'; ?>
 				<dl>
-					<dt><strong><?php if ($lokalizuje=='Codik') echo 'Autor'; else echo 'Lokalizuje'; ?></strong></dt>
+					<dt><strong><?php if (($lokalizuje=='Codik')||($lokalizuje=='Michal Paulovič')||($lokalizuje=='Mazarik')) echo 'Autor'; else echo 'Lokalizuje'; ?></strong></dt>
 					<dd><?php echo $lokalizuje;
 //						if ($lok_profil) echo ' [<a href="/o-nas#'.$lok_url.'">profil</a>]';
 //						if ($lok_hmp) echo ', [<a href="'.$lok_hmp.'">domovská stránka</a>]'; 
@@ -320,7 +328,7 @@ vypis stranky rozsirenia
 						echo '<dt><strong>Preložená verzia</strong></dt>';
 					
 					echo '<dd>'.$verzia.'</dd>';
-					if (($najnovsia!=$rozsirenie->datum) && ($ver!='test')) {
+					if (($najnovsia!=$rozsirenie->datum) && ($ver!='test') && ($rozsirenie->publikovat!=3)) {
 					$temp = $wpdb->get_row("SELECT podporovane,homepage,czilla,addon,verzia FROM mozsk_rozsirenia WHERE publikovat=1 AND nazov='$nazov' AND datum='$najnovsia'"); 
 							echo '</dl><div class="info"><small class="black">Existuje novšia verzia (<strong>v'.$temp->verzia.'</strong>) rozšírenia <strong>'.$nazov.'</strong>. Ak je to možné, odporúčame používať vždy <a href="'.$folder.$urlid.'/">najnovšiu verziu</a>.</small></div><dl>';					
 							
@@ -340,11 +348,12 @@ vypis stranky rozsirenia
 					<?php if ($ff): ?><li class="ico-ff">Firefox <?php echo formatverziu($urcene_ff_od,'ff'); if (($urcene_ff_do) && ($urcene_ff_do!=$urcene_ff_od)) echo ' až '.formatverziu($urcene_ff_do,'ff') ?></li><?php endif; ?>
 					<?php if ($tb): ?><li class="ico-tb">Thunderbird <?php echo formatverziu($urcene_tb_od,'tb'); if (($urcene_tb_do) && ($urcene_tb_do!=$urcene_tb_od)) echo ' až '.formatverziu($urcene_tb_do,'tb') ?></li><?php endif; ?>
 					<?php if ($ms): ?><li class="ico-ms">Mozilla Suite <?php echo $urcene_ms_od; if (($urcene_ms_do) && ($urcene_ms_do!=$urcene_ms_od)) echo ' až '.$urcene_ms_do ?></li><?php endif; ?>
-					<?php if ($sm): ?><li class="ico-sm">Seamonkey <?php echo $urcene_sm_od; if (($urcene_sm_do) && ($urcene_sm_do!=$urcene_sm_od)) echo ' až '.$urcene_sm_do ?></li><?php endif; ?>
+					<?php if ($sm): ?><li class="ico-sm">SeaMonkey <?php echo $urcene_sm_od; if (($urcene_sm_do) && ($urcene_sm_do!=$urcene_sm_od)) echo ' až '.$urcene_sm_do ?></li><?php endif; ?>
 					<?php if ($ns): ?><li class="ico-ns">Netscape <?php echo $urcene_ns_od; if (($urcene_ns_do) && ($urcene_ns_do!=$urcene_ns_od)) echo ' až '.$urcene_ns_do ?></li><?php endif; ?>
 					<?php if ($sb): ?><li class="ico-sn">Sunbird <?php echo $urcene_sb_od; if (($urcene_sb_do) && ($urcene_sb_do!=$urcene_sb_od)) echo ' až '.$urcene_sb_do ?></li><?php endif; ?>
 					<?php if ($nv): ?><li class="ico-nvu">Nvu <?php echo $urcene_nv_od; if (($urcene_nv_do) && ($urcene_nv_do!=$urcene_nv_od)) echo ' až '.$urcene_nv_do ?></li><?php endif; ?>
 					<?php if ($fl): ?><li class="ico-fl">Flock <?php echo $urcene_fl_od; if (($urcene_fl_do) && ($urcene_fl_do!=$urcene_fl_od)) echo ' až '.$urcene_fl_do ?></li><?php endif; ?>
+					<?php if ($sng): ?><li class="ico-sng">Songbird <?php echo $urcene_sng_od; if (($urcene_sng_do) && ($urcene_sng_do!=$urcene_sng_od)) echo ' až '.$urcene_sng_do ?></li><?php endif; ?>
 				</ul>
 				
 								
@@ -353,16 +362,15 @@ vypis stranky rozsirenia
 						
 				<div class="downloadarea">
 					<div class="downloadbox1"><div class="download2-top"><div class="download2-bottom"><div class="download2">
-						<small>verzia pre <strong><?php echo $url[1] ?></strong></small><br />
-						<a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
-						<a href="<?php echo $url[0] ?>">Stiahnuť</a><br />
-						<small class="velkost">veľkosť: <strong><?php if(is_file('/home/epicnet/mozilla.sk'.$url[0])) echo round(filesize('/home/epicnet/mozilla.sk'.$url[0])/1024).' kB'; else echo ' neznáma' ?></strong></small>
+						<small>verzia pre <strong><?php echo $url[1]?></strong></small><br />
+						<?php if($ff | $ms | $sm | $ns | $sb | $nv | $fl) { ?><a href="#" onclick="javascript:xpi = {'<?php echo $nazov .' ' .$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+						<?php } ?><a href="<?php echo $url[0] ?>">Prevziať</a><br />
+						<small class="velkost">veľkosť: <strong><?php if(is_file($server.$url[0])) echo round(filesize($server.$url[0])/1024).' kB'; else echo ' neznáma' ?></strong></small>
 					</div></div></div></div>
 					<div class="downloadbox2"><div class="download2-top"><div class="download2-bottom"><div class="download2">
-						<small>verzia pre <strong><?php echo $url[3] ?></strong></small><br />
-						<a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[2] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
-						<a href="<?php echo $url[2] ?>">Stiahnuť</a><br />
-						<small class="velkost">veľkosť: <strong><?php if(is_file('/home/epicnet/mozilla.sk'.$url[2])) echo round(filesize('/home/epicnet/mozilla.sk'.$url[2])/1024).' kB'; else echo ' neznáma' ?></strong></small>
+						<small>verzia pre <strong><?php echo $url[3] ?></strong></small><br />						<?php if($ff | $ms | $sm | $ns | $sb | $nv | $fl) { ?><a href="#" onclick="javascript:xpi = {'<?php echo $nazov .' '. $verzia ?>': '<?php echo $url[2] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+						<?php } ?><a href="<?php echo $url[2] ?>">Prevziať</a><br />
+						<small class="velkost">veľkosť: <strong><?php if(is_file($server.$url[2])) echo round(filesize($server.$url[2])/1024).' kB'; else echo ' neznáma' ?></strong></small>
 					</div></div></div></div>
 				</div>
 			
@@ -373,24 +381,24 @@ vypis stranky rozsirenia
 
 				<div class="download-top"><div class="download-bottom"><div class="download">
 					<?php if($ff | $ms | $sm | $ns | $sb | $nv | $fl) { ?> 
-					<a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+					<a href="#" onclick="javascript:xpi = {'<?php echo $nazov .' ' . $verzia?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
 					<?php } ?>
-					<a href="<?php echo $url[0] ?>">Stiahnuť</a><br />
-					<small class="velkost">veľkosť: <strong><?php if(is_file('/home/epicnet/mozilla.sk'.$url[0])) echo round(filesize('/home/epicnet/mozilla.sk'.$url[0])/1024).' kB'; else echo ' neznáma' ?></strong></small>
+					<a href="<?php echo $url[0] ?>">Prevziať</a><br />
+					<small class="velkost">veľkosť: <strong><?php if(is_file($server.$url[0])) echo round(filesize($server.$url[0])/1024).' kB'; else echo ' neznáma' ?></strong></small>
 				</div></div></div>
 
 				<?php } ?>
 				
 				<?php if ($poznamka): ?><div class="error"><?php echo $poznamka ?></div><?php endif; ?>
 				
-				<h3>Súvisiace odkazy</h3>
+				<h3>Súvisiace odkazy</h3> 
 				<ul>
-					<li>Máte problém s inštaláciou rozšírenia? Prečítajte si náš <a href="/rozsirenia/instalacia-rozsireni/">návod</a>.</li>
-					<li>Máte otázku týkajúcu sa tohto rozšírenia? Napíšte nám do <a href="http://forum.mozilla.sk/viewforum.php?f=<?php echo $forum ?>">fóra</a>.</li>
-					<li>Našli ste nejakú chybu v&nbsp;preklade tohto rozšírenia? <a href="http://forum.mozilla.sk/viewtopic.php?t=<?php echo $nahlasit ?>">Nahláste nám ju!</a></li>
-					<?php if ($homepage): ?><li style="list-style-image: url('/wp-content/images/logo/rozsirenia_lok/domov.png')"><a href="<?php echo $homepage.'"'; if ($lokalizuje!='Codik') echo ' hreflang="en"' ?> >Oficiálna stránka rozšírenia <?php echo $nazov ?></a></li><?php endif; ?>
+					<li style="list-style-image: url('/wp-content/themes/mozillask/images/navod.gif')">Máte problém s inštaláciou rozšírenia? Prečítajte si náš <a href="/rozsirenia/instalacia-rozsireni/">návod</a>.</li>
+					<li style="list-style-image: url('/wp-content/themes/mozillask/images/forum.gif')">Máte otázku týkajúcu sa tohto rozšírenia? Napíšte nám do <a href="http://forum.mozilla.sk/viewforum.php?f=<?php echo $forum ?>">fóra</a>.</li>
+					<li style="list-style-image: url('/wp-content/themes/mozillask/images/chyba.gif')">Našli ste nejakú chybu v&nbsp;preklade tohto rozšírenia? <a href="http://forum.mozilla.sk/viewtopic.php?t=<?php echo $nahlasit ?>">Nahláste nám ju!</a></li>
+					<?php if ($homepage): ?><li style="list-style-image: url('/wp-content/themes/mozillask/images/domov.gif')"><a href="<?php echo $homepage.'"'; if (($lokalizuje!='Codik')&&($lokalizuje!='Michal Paulovič')&&($urlid!='update-scanner')) echo ' hreflang="en"' ?> >Oficiálna stránka rozšírenia <?php echo $nazov ?></a></li><?php endif; ?>
 					<?php if ($czilla): ?><li style="list-style-image: url('/wp-content/plugins/mozsk-rozsirenia/czilla.gif')"><a href="http://www.czilla.cz/doplnky/rozsireni/<?php echo $czilla ?>" hreflang="cs">Česká lokalizácia rozšírenia <?php echo $nazov ?></a></li><?php endif; ?>
-					<?php if ($addon): ?><li style="list-style-image: url('/mozilla-16.png')"><a href="https://addons.mozilla.org/extensions/moreinfo.php?id=<?php echo $addon ?>" hreflang="en">Stránka rozšírenia na serveri Mozilla Add-ons</a></li><?php endif; ?>
+					<?php if ($addon): ?><li style="list-style-image: url('/mozilla-16.png')"><a href="https://addons.mozilla.org/extensions/moreinfo.php?id=<?php echo $addon ?>">Stránka rozšírenia na serveri Mozilla Add-ons</a></li><?php endif; ?>
 				</ul>
 
 
@@ -424,13 +432,13 @@ vypis stranky rozsirenia
 			
 								?>
 				
-									<strong><?php echo $url[1] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
-									<a href="<?php echo $url[0] ?>">Stiahnuť</a>
-									(veľkosť: <strong><?php echo round(filesize('/home/epicnet/mozilla.sk'.$url[0])/1024) ?> kB</strong>)
+									<strong><?php echo $url[1] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov . ' ' . $verzia?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+									<a href="<?php echo $url[0] ?>">Prevziať</a>
+									(veľkosť: <strong><?php echo round(filesize($server.$url[0])/1024) ?> kB</strong>)
 									<br/>
-									<strong><?php echo $url[3] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
-									<a href="<?php echo $url[2] ?>">Stiahnuť</a>
-									(veľkosť: <strong><?php echo round(filesize('/home/epicnet/mozilla.sk'.$url[2])/1024) ?> kB</strong>)
+									<strong><?php echo $url[3] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov . ' ' . $verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+									<a href="<?php echo $url[2] ?>">Prevziať</a>
+									(veľkosť: <strong><?php echo round(filesize($server.$url[2])/1024) ?> kB</strong>)
 				
 									<?php
 								}
@@ -440,10 +448,10 @@ vypis stranky rozsirenia
 								{
 									if($ff | $ms | $sm | $ns | $sb | $nv | $fl) 
 										{  ?>
-											<a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+											<a href="#" onclick="javascript:xpi = {'<?php echo $nazov  . ' ' . $verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
 										<?php } ?>
-									<a href="<?php echo $url[0] ?>">Stiahnuť</a>
-									(veľkosť: <strong><?php echo round(filesize('/home/epicnet/mozilla.sk'.$url[0])/1024) ?> kB</strong>)
+									<a href="<?php echo $url[0] ?>">Prevziať</a>
+									(veľkosť: <strong><?php echo round(filesize($server.$url[0])/1024) ?> kB</strong>)
 									<?php
 								}
 							echo '<br/><br/></small></dd>';
@@ -478,13 +486,13 @@ vypis stranky rozsirenia
 								{
 			
 									?>
-									<strong><?php echo $url[1] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verziav ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
-									<a href="<?php echo $url[0] ?>">Stiahnuť</a>
-									(veľkosť: <strong><?php echo round(filesize('/home/epicnet/mozilla.sk'.$url[0])/1024) ?> kB</strong>)
+									<strong><?php echo $url[1] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov  . ' ' . $verzia?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+									<a href="<?php echo $url[0] ?>">Prevziať</a>
+									(veľkosť: <strong><?php echo round(filesize($server.$url[0])/1024) ?> kB</strong>)
 									<br/>
-									<strong><?php echo $url[3] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
-									<a href="<?php echo $url[2] ?>">Stiahnuť</a>
-									(veľkosť: <strong><?php echo round(filesize('/home/epicnet/mozilla.sk'.$url[2])/1024) ?> kB</strong>)
+									<strong><?php echo $url[3] ?></strong>: <a href="#" onclick="javascript:xpi = {'<?php echo $nazov  . ' ' . $verzia?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+									<a href="<?php echo $url[2] ?>">Prevziať</a>
+									(veľkosť: <strong><?php echo round(filesize($server.$url[2])/1024) ?> kB</strong>)
 				
 									<?php
 								}
@@ -495,10 +503,10 @@ vypis stranky rozsirenia
 				
 									if($ff | $ms | $sm | $ns | $sb | $nv | $fl) 
 										{  ?>
-											<a href="#" onclick="javascript:xpi = {'<?php echo $nazov.' '.$verzia ?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
+											<a href="#" onclick="javascript:xpi = {'<?php echo $nazov  . ' ' . $verzia?>': '<?php echo $url[0] ?>'}; InstallTrigger.install(xpi);">Nainštalovať</a> | 
 										<?php } ?>
-									<a href="<?php echo $url[0] ?>">Stiahnuť</a>
-									(veľkosť: <strong><?php echo round(filesize('/home/epicnet/mozilla.sk'.$url[0])/1024) ?> kB</strong>)
+									<a href="<?php echo $url[0] ?>">Prevziať</a>
+									(veľkosť: <strong><?php echo round(filesize($server.$url[0])/1024) ?> kB</strong>)
 									<?php
 								}
 							echo '<br/><br/></small></dd>';
@@ -511,7 +519,7 @@ vypis stranky rozsirenia
 			?>
 			<?php if (!$podporovane): ?>
 				<h3>Upozornenie</h3>
-				Slovenská jazyková verzia zatiaľ nie je podporovaná vydavateľom rozšírenia. To znamená, že v&nbsp;prípade, že sa objaví nová verzia a&nbsp;prehliadač si ju automaticky nainštaluje, budete si musieť opäť stiahnuť slovenskú verziu tohoto rozšírenia manuálne.
+				Slovenská jazyková verzia zatiaľ nie je podporovaná vydavateľom rozšírenia. To znamená, že v&nbsp;prípade, že sa objaví nová verzia a&nbsp;prehliadač si ju automaticky nainštaluje, budete si musieť opäť prevziať slovenskú verziu tohto rozšírenia manuálne.
 			<?php endif; ?>
 
 			</div>
@@ -539,12 +547,11 @@ vypis 404
 					echo '<script>document.location.href="/index.php?pagename=rozsirenia/'.$urlid.'"</script>';
 
 					}
-	else echo '<script>document.location.href="/404/"</script>';
+	else echo '<script>document.location.href="/404.php/"</script>'; 
 	}
 
 }
 
 ?>
 </div>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

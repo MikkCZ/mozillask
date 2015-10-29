@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_sidebar(); ?>
+
 	<div id="content" class="narrowcolumn">
 
 		<h3>Požadovaná stránka sa nenašla (chyba 404)!</h3>
@@ -11,10 +13,9 @@
 				<li>Server je momentálne zaneprázdnený a nie je schopný splniť vašu požiadavku.</li>
 			</ul>
 
-		<p>Ak ide o nesprávny odkaz na našich stránkach, oznámte nám prosím túto skutočnosť na adresu <em>mozilla [zavináč] mozilla.sk</em>. Vopred ďakujeme.<br/><br/>
+		<p>Ak ide o nesprávny odkaz na našich stránkach, oznámte nám prosím túto skutočnosť na adresu <em>webmaster [zavináč] mozilla.sk</em>. Vopred ďakujeme.<br/><br/>
 		Kompletný zoznam našich stránok nájdete na <a href="/sitemap/">Mape portálu Mozilla.sk</a>.</p>
 	</div>
 
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

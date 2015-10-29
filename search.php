@@ -19,7 +19,7 @@
 					<?php the_excerpt() ?>
 				</div>
 		
-				<p class="postmetadata">Rubrika <?php the_category(', ') ?> <strong>|</strong> <?php edit_post_link('Upraviť ','','<strong>|</strong>'); ?>  <?php comments_popup_link('Žiadne komentáre &#187;', '1 komentár &#187;', '% komentárov &#187;'); ?></p> 
+				<p class="postmetadata">Rubrika <?php the_category(', ') ?> <strong>|</strong> <?php edit_post_link('Upraviť ','','<strong>|</strong>'); ?>  <?php comments_popup_link('Žiadne komentáre &#187;', 'Komentáre (1) &#187;', 'Komentáre (%) &#187;'); ?></p> 
 				
 				<!--
 				<?php trackback_rdf(); ?>
@@ -35,10 +35,10 @@
 	
 	<?php else : ?>
 
-		<h2 class="center">Not Found</h2>
-
+		<h3 class="archive">Výsledok vyhľadávania<br/><small>hľadaný výraz: <strong>'<?php echo wp_specialchars($s); ?>'</strong></small></h3>
+    <div class="error">Zadaný výraz sa nepodarilo nájsť.</div> <br/><br/><br/>
 	<?php endif; ?>
-
+    
 		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 		
 	</div>

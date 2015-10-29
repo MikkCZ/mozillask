@@ -27,13 +27,13 @@
 	<?php foreach ($comments as $comment) : ?>
 
 		<li class="<?php echo $oddcomment; ?>" id="comment-<?php comment_ID() ?>">
-			<cite><?php comment_author_link() ?></cite> hovorí:
+			<cite><?php comment_author_link() ?></cite> napísal:
 			<?php if ($comment->comment_approved == '0') : ?>
 			<em>Váš komentár čaká na moderáciu.</em>
 			<?php endif; ?>
 			<br />
 
-			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('j.n.Y') ?> o&nbsp;<?php comment_time() ?></a> <?php edit_comment_link('e','',''); ?></small>
+			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('j.n.Y') ?> o&nbsp;<?php comment_time() ?></a> <?php edit_comment_link('upraviť',' | ',''); ?></small>
 
 			<?php comment_text() ?>
 
@@ -63,7 +63,7 @@
 
 <?php if ('open' == $post-> comment_status) : ?>
 
-<h3 id="respond">Pridajte komentár</h3>
+<h3 id="respond">Pridať komentár</h3>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p>Musíte sa <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">prihlásiť</a>, aby ste mohli pridať komentár.</p>
@@ -73,7 +73,7 @@
 
 <?php if ( $user_ID ) : ?>
 
-<p>Prihlásený/á ako <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php _e('Log out of this account') ?>">Odhlásiť &raquo;</a></p>
+<p>Prihlásený ako <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php _e('Log out of this account') ?>">Odhlásiť &raquo;</a></p>
 
 <?php else : ?>
 
@@ -88,11 +88,11 @@
 
 <?php endif; ?>
 
-<!--<p><small><strong>XHTML:</strong> You can use these tags: <?php echo allowed_tags(); ?></small></p>-->
 
-<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+<p><textarea name="comment" id="comment" cols="100%" rows="7" tabindex="4"></textarea></p>
+<p><small><strong>XHTML:</strong> Môžete použiť nasledujúce tagy: <?php echo allowed_tags(); ?></small></p>
 
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="Zaslať komentár" />
+<p><input name="submit" type="submit" id="submit_c" tabindex="5" value="Odoslať komentár" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
 </p>
 <?php do_action('comment_form', $post->ID); ?>

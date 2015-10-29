@@ -1,5 +1,6 @@
-<form method="get" id="searchform" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-<div><input type="text" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="s" />
-<input type="submit" id="searchsubmit" value="Hľadať" />
-</div>
-</form>
+		<div id="vyhladavanie">
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" id="vyhladavanie_form">
+				<input class="form-text" type="text" size="15" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="keys_vyh" />
+				<input id="submit_vyh" type="image" src="/wp-content/themes/mozillask/searcha.png"  /><br/>
+			</form>
+		</div>	

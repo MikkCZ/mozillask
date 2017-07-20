@@ -90,7 +90,7 @@ if ($CFG['exclude_forums'])
  //     ' . $sql_where . '
  //     ORDER BY t.topic_last_post_time DESC LIMIT 4';
  
- $sql = "SELECT t.topic_id, t.topic_last_post_time, t.topic_last_poster_name, t.topic_title, t.topic_last_post_id, t.topic_replies_real
+ $sql = "SELECT t.topic_id, t.topic_last_post_time, t.topic_last_poster_name, t.topic_title, t.topic_last_post_id, t.topic_posts_approved
 						FROM mozbb3_topics as t
         ORDER BY t.topic_last_post_time DESC LIMIT 4";
         
@@ -101,7 +101,7 @@ if($result)
   foreach ($result as $row) 
 	{
 
-   echo '<p><a target="_blank" href="'.$phpbb_root_path.'viewtopic.php?t='.$row->topic_id.'&amp;p='.$row->topic_last_post_id.'#p'.$row->topic_last_post_id.'">'.$row->topic_title.'</a><br/><strong>('.$row->topic_replies_real.')</strong> od '.$row->topic_last_poster_name.'<br/>'.format_date($row->topic_last_post_time).'</p>';
+   echo '<p><a target="_blank" href="'.$phpbb_root_path.'viewtopic.php?t='.$row->topic_id.'&amp;p='.$row->topic_last_post_id.'#p'.$row->topic_last_post_id.'">'.$row->topic_title.'</a><br/><strong>('.$row->topic_posts_approved.')</strong> od '.$row->topic_last_poster_name.'<br/>'.format_date($row->topic_last_post_time).'</p>';
 }
 
 }

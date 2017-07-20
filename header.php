@@ -40,7 +40,7 @@
 
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" id="search">
         <input class="form-text" type="text" size="15" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="keys" />
-        <input id="submit" type="image" src="/wp-content/themes/mozillask/searcha.png"  />
+        <input id="submit" type="image" src="/wp-content/themes/mozillask/images/searcha.png"  />
         </form> 
 
 

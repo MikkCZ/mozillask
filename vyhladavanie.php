@@ -15,7 +15,7 @@ echo '<div class="post-page">
 ?>
  			<form action="" method="get" id="vyhladavanie_rozsireni">
 				<input class="form-text" type="text" size="15" value="<?php echo wp_specialchars($hladat, 1); ?>" name="hladat" id="hladat" />
-				<input id="submit" type="image" src="/wp-content/themes/mozillask/searcha.png"  /><br/>
+				<input id="submit" type="image" src="/wp-content/themes/mozillask/images/searcha.png"  /><br/>
 			</form> 
 
         </div></div></div>  

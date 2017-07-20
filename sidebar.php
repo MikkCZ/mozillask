@@ -34,7 +34,7 @@
 
 			<form action="/rozsirenia/vyhladavanie/" method="post" id="vyhladavanie_form">
 				<input class="form-text" type="text" size="15" value="<?php echo wp_specialchars($hladat, 1); ?>" name="hladat" id="keys_vyh" />
-				<input id="submit_vyh" type="image" src="/wp-content/themes/mozillask/searcha.png"  /><br/>
+				<input id="submit_vyh" type="image" src="/wp-content/themes/mozillask/images/searcha.png"  /><br/>
 				<input type="hidden" value="1" name="popis" />
 				<input type="hidden" value="1" name="first_run" />
 				<input type="hidden" value="1" name="hl_popis" />

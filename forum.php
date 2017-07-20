@@ -21,5 +21,5 @@ if (file_exists('/home/epicnet/mozilla.sk/forum/config.php'))
 
 else ?>
 		<p>Počet príspevkov: <strong>xxx</strong><br/>
-		<span class="alignright tucne"><a href="http://forum.mozilla.sk">Pridajte sa aj vy! &raquo;</a></span></p>
+		<span class="alignright tucne"><a href="https://forum.mozilla.sk">Pridajte sa aj vy! &raquo;</a></span></p>
 

@@ -402,7 +402,7 @@ vypis stranky rozsirenia
 				<h3>Súvisiace odkazy</h3> 
 				<ul>
 					<li style="list-style-image: url('/wp-content/themes/mozillask/images/navod.gif')">Máte problém s inštaláciou rozšírenia? Prečítajte si náš <a href="/rozsirenia/instalacia-rozsireni/">návod</a>.</li>
-					<li style="list-style-image: url('/wp-content/themes/mozillask/images/forum.gif')">Máte otázku týkajúcu sa tohto rozšírenia? Napíšte nám do <a href="http://forum.mozilla.sk/viewtopic.php?t=<?php echo $nahlasit ?>">fóra!</a></li>
+					<li style="list-style-image: url('/wp-content/themes/mozillask/images/forum.gif')">Máte otázku týkajúcu sa tohto rozšírenia? Napíšte nám do <a href="https://forum.mozilla.sk/viewtopic.php?t=<?php echo $nahlasit ?>">fóra!</a></li>
 					<?php if ($homepage): ?><li style="list-style-image: url('/wp-content/themes/mozillask/images/domov.gif')"><a href="<?php echo $homepage.'"'; if (($lokalizuje!='Codik')&&($lokalizuje!='Michal Paulovič')&&($urlid!='update-scanner')) echo ' hreflang="en"' ?> >Oficiálna stránka rozšírenia <?php echo $nazov ?></a></li><?php endif; ?>
 					<?php /*if ($czilla): ?><li style="list-style-image: url('/wp-content/plugins/mozsk-rozsirenia/czilla.gif')"><a href="http://www.czilla.cz/doplnky/rozsireni/<?php echo $czilla ?>" hreflang="cs">Česká lokalizácia rozšírenia <?php echo $nazov ?></a></li><?php endif;*/ ?>
 					<?php if ($addon): ?><li style="list-style-image: url('/mozilla-16.png')"><a href="https://addons.mozilla.org/sk/addon/<?php echo $addon ?>/">Stránka rozšírenia na serveri Mozilla Add-ons</a></li><?php endif; ?>
@@ -545,7 +545,7 @@ vypis 404
 	else
 	{
 //		echo '<div class="post"><h2>Rozšírenie nenájdené!</h2></div>';
-//		echo "<a href=\"http://{$_SERVER['HTTP_HOST']}/index.php?pagename=rozsirenia/$urlid\">sem</a>";
+//		echo "<a href=\"https://{$_SERVER['HTTP_HOST']}/index.php?pagename=rozsirenia/$urlid\">sem</a>";
 //	wp_redirect(get_404_template());
 	$stranky = $wpdb->get_var("SELECT id FROM $wpdb->posts WHERE post_parent=13 AND post_name='$urlid'");
 	echo 'stranky: '.$stranky;	

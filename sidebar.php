@@ -86,13 +86,13 @@ FALSE, -1, TRUE); ?>
       <div class="infopanel-top">
 			<div class="infopanel-bottom"> 
 			<?php if (is_page('download')) {?>
-				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/ocakavame.png" alt="Očakávame" /></div>
+				<!--<div class="nadpis"><img src="/wp-content/themes/mozillask/images/ocakavame.png" alt="Očakávame" /></div>
 				<div class="infopanel male ocakavame">
 				<br/>
-        <?php snippets_value( 'kedy_vyjde' ); //include (TEMPLATEPATH.'/ocakavame.php');
-				echo '<p class="center tucne">Dátumy sú približné a môžu sa meniť.</p>';
-				echo '</div>';
-				 } else { ?>
+        <?php /*snippets_value( 'kedy_vyjde' );*/ include (TEMPLATEPATH.'/ocakavame.php'); ?>
+				<p class="center tucne">Dátumy sú približné a môžu sa meniť.</p>
+				</div>-->
+			<?php } else { ?>
 				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/aktualne-verzie.png" alt="Aktuálne verzie" /><img src="/wp-content/themes/mozillask/images/<?php $agent=$_SERVER["HTTP_USER_AGENT"]; $os='win'; $os_name='Windows'; if (strstr($agent,"Mac")) { $os='mac'; $os_name='Mac OS'; } elseif (strstr($agent,"Linux")) { $os='lin'; $os_name='Linux'; } echo $os ?>_ver.png" alt="system_image" /></div>
 				<div class="infopanel verzie">
 				<p><img src="/wp-content/images/logo/firefox35/firefox-36.png" alt="Firefox" /> <a href="<?php echo get_newprodukt('firefox','link') ?>" title="Prevziať Firefox <?php echo get_newprodukt('firefox','verzia'); echo ' (pre '.$os_name.')'; ?>">Firefox</a><br/><b><?php echo get_newprodukt('firefox','verzia') ?></b></p>
@@ -107,10 +107,10 @@ FALSE, -1, TRUE); ?>
 
 			<div class="infopanel-top">
 			<div class="infopanel-bottom">
-				<div class="nadpis"><a href="http://forum.mozilla.sk"><img src="/wp-content/themes/mozillask/images/forum-mozilla-sk.png" alt="Fórum Mozilla.sk" /></a></div>
+				<div class="nadpis"><a href="https://forum.mozilla.sk"><img src="/wp-content/themes/mozillask/images/forum-mozilla-sk.png" alt="Fórum Mozilla.sk" /></a></div>
 				<div class="infopanel male">
 				<?php include (TEMPLATEPATH.'/syndication-sidebar.php'); ?>
-<p><span class="alignright tucne"><a href="http://forum.mozilla.sk" target="_blank">Pridajte sa aj vy! &raquo;</a></span></p><br/>
+<p><span class="alignright tucne"><a href="https://forum.mozilla.sk" target="_blank">Pridajte sa aj vy! &raquo;</a></span></p><br/>
 				</div>
 			</div>
 			</div>
@@ -120,7 +120,7 @@ FALSE, -1, TRUE); ?>
 				<div class="nadpis">Krátko z Twittera</div>
 				<div id="twitter" class="infopanel male">
         <?php twitter_messages("MozillaCZ"); ?>
-				<br/><span class="alignright tucne"><a href="http://twitter.com/MozillaCZ/" target="_blank">Ďalšie správy &raquo;</a></span><br/>
+				<br/><span class="alignright tucne"><a href="https://twitter.com/MozillaCZ/" target="_blank">Ďalšie správy &raquo;</a></span><br/>
 				</div>
 			</div>
 			</div>
@@ -167,8 +167,8 @@ FALSE, -1, TRUE); ?>
 					<li><a style="text-decoration: none;" title="Články (Atom 0.3)" href="<?php bloginfo('atom_url'); ?>" >Články <small>(Atom 0.3)</small></a></li>
 					<li><a style="text-decoration: none;" title="Komentáre (RSS 2.0)" href="<?php bloginfo('comments_rss2_url'); ?>" >Komentáre <small>(RSS 2.0)</small></a></li>
 <!--					<li><a style="text-decoration: none;" title="Rozšírenia (RSS 2.0)" href="http://www.mozilla.sk/rozsirenia_rss.php" >Rozšírenia <small>(RSS 2.0)</small></a></li> -->
-					<li><a style="text-decoration: none;" title="Fórum (RSS 2.0)" href="http://forum.mozilla.sk/syndication.php" >Fórum <small>(RSS 2.0)</small></a></li>
-					<li><a style="text-decoration: none;" title="Fórum (Atom 0.3)" href="http://forum.mozilla.sk/syndication.php?atom" >Fórum <small>(Atom 0.3)</small></a></li>
+					<li><a style="text-decoration: none;" title="Fórum (RSS 2.0)" href="https://forum.mozilla.sk/syndication.php" >Fórum <small>(RSS 2.0)</small></a></li>
+					<li><a style="text-decoration: none;" title="Fórum (Atom 0.3)" href="https://forum.mozilla.sk/syndication.php?atom" >Fórum <small>(Atom 0.3)</small></a></li>
 					</ul>
 				</div>
 			</div>

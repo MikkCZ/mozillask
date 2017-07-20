@@ -15,9 +15,9 @@
 	<link rel="alternate" type="application/rss+xml" title="Články (RSS 2.0)" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="alternate" type="application/atom+xml" title="Články (Atom 0.3)" href="<?php bloginfo('atom_url'); ?>" />
 	<link rel="alternate" type="application/rss+xml" title="Komentáre (RSS 2.0)" href="<?php bloginfo('comments_rss2_url'); ?>" />
-<!--	<link rel="alternate" type="application/rss+xml" title="Rozšírenia (RSS 2.0)" href="http://www.mozilla.sk/rozsirenia_rss.php" /> -->
+<!--	<link rel="alternate" type="application/rss+xml" title="Rozšírenia (RSS 2.0)" href="https://www.mozilla.sk/rozsirenia_rss.php" /> -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<link rel="search" type="application/opensearchdescription+xml" title="Vyhľadávací modul pre Mozilla.sk" href="http://www.mozilla.sk/wp-content/download/searchplugins/mozillask_search.xml" />
+	<link rel="search" type="application/opensearchdescription+xml" title="Vyhľadávací modul pre Mozilla.sk" href="https://www.mozilla.sk/wp-content/download/searchplugins/mozillask_search.xml" />
 	<link rel="icon" href="/favicon.png" type="image/png" />
 
 	<?php wp_get_archives('type=monthly&format=link'); ?>
@@ -32,7 +32,7 @@
 		<div class="description"><?php bloginfo('description'); ?></div>
 		
 		   <ul id="primary">
-             <li class="koniec"><a href="http://forum.mozilla.sk" title="Fórum Mozilla.sk">Fórum</a></li>
+             <li class="koniec"><a href="https://forum.mozilla.sk" title="Fórum Mozilla.sk">Fórum</a></li>
              <li class="stred"><a href="/sitemap/" title="Mapa servera">Mapa portálu</a></li>
              <li class="stred"><a href="/kontakt/" title="Kontakt">Kontakt</a></li>
              <li><a href="/o-nas/" title="O nás">O nás</a></li>

@@ -39,7 +39,7 @@ function formatdatum($datum)
 
 <?php
 include_once(ABSPATH.WPINC.'/rss.php'); // path to include script
-$feed = fetch_rss('http://feeds.feedburner.com/Mozillacz'); // specify feed url
+$feed = fetch_rss('https://feeds.feedburner.com/Mozillacz'); // specify feed url
 $limit = 4;
 $items = array_slice($feed->items, 0, $limit+1); // specify first and last item
 ?>
@@ -69,7 +69,7 @@ $items = array_slice($feed->items, 0, $limit+1); // specify first and last item
 				</td>
     		</tr>
     		<tr>
-				<td><small class="alignright tucne"><a href="http://www.mozilla.cz/" target="_blank">ďalšie správy na Mozilla.cz&raquo;</a></small></td>
+				<td><small class="alignright tucne"><a href="https://www.mozilla.cz/" target="_blank">ďalšie správy na Mozilla.cz&raquo;</a></small></td>
 			</tr>
     	</table>
 			
@@ -130,7 +130,7 @@ $items = array_slice($feed->items, 0, $limit+1); // specify first and last item
     <param name="swliveconnect" value="true" />
     <param name="wmode" value="transparent" />
   </object>
-  <br/><small><a href="http://www.mozilla.sk/">Mozilla.sk - základňa slovenskej lokalizačnej komunity</a><br/><br/>Banery vhodné pre vašu stránku nájdete v sekcii <a href="/download/tapety-a-reklamne-pruzky/">Propagácia</a>.</small></p> -->
+  <br/><small><a href="https://www.mozilla.sk/">Mozilla.sk - základňa slovenskej lokalizačnej komunity</a><br/><br/>Banery vhodné pre vašu stránku nájdete v sekcii <a href="/download/tapety-a-reklamne-pruzky/">Propagácia</a>.</small></p> -->
 
 	</div>
 

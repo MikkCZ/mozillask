@@ -31,12 +31,7 @@
 		<h1><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
 		<div class="description"><?php bloginfo('description'); ?></div>
 		
-		   <ul id="primary">
-             <li class="koniec"><a href="https://forum.mozilla.sk" title="Fórum Mozilla.sk">Fórum</a></li>
-             <li class="stred"><a href="/sitemap/" title="Mapa servera">Mapa portálu</a></li>
-             <li class="stred"><a href="/kontakt/" title="Kontakt">Kontakt</a></li>
-             <li><a href="/o-nas/" title="O nás">O nás</a></li>
-           </ul>
+		   <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 
 		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get" id="search">
         <input class="form-text" type="text" size="15" value="<?php echo wp_specialchars($s, 1); ?>" name="s" id="keys" />

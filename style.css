@@ -2054,14 +2054,6 @@ dl.old-versions dd
   background: #fff;
 }
 
-div#twitter>p.twitter-message:not(:first-child) {
-  border-top: 1px solid rgb(173,182,202);
-}
-
-.twitter-timestamp {
-  color: #777;
-}
-
 .dnes {
   color: #CC0000;
 }

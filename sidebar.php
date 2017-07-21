@@ -117,16 +117,6 @@ FALSE, -1, TRUE); ?>
 
 			<div class="infopanel-top">
 			<div class="infopanel-bottom">
-				<div class="nadpis">Krátko z Twittera</div>
-				<div id="twitter" class="infopanel male">
-        <?php twitter_messages("MozillaCZ"); ?>
-				<br/><span class="alignright tucne"><a href="https://twitter.com/MozillaCZ/" target="_blank">Ďalšie správy &raquo;</a></span><br/>
-				</div>
-			</div>
-			</div>
-
-			<div class="infopanel-top">
-			<div class="infopanel-bottom">
 			<?php if (is_page('test')) {?>
 				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/pripravovane-rozsirenia.png" alt="Pripravované rozšírenia" /></div>
 				<div class="infopanel" style="text-align: left">

@@ -36,14 +36,6 @@
 <div style="text-align: center;"><img src="/wp-content/themes/mozillask/images/<?php /*if (rand(1,2) == 2) echo 'thunderbird'; else echo 'firefox' */?>_snow_globe.png" alt="Vianoce" title="Príjemné prežitie Vianoc a veľa štastia v roku 2010 želá Mozilla.sk" /></div>-->
       <div class="infopanel-top">
 			<div class="infopanel-bottom"> 
-			<?php if (is_page('download')) {?>
-				<!--<div class="nadpis"><img src="/wp-content/themes/mozillask/images/ocakavame.png" alt="Očakávame" /></div>
-				<div class="infopanel male ocakavame">
-				<br/>
-        <?php /*snippets_value( 'kedy_vyjde' );*/ include (TEMPLATEPATH.'/ocakavame.php'); ?>
-				<p class="center tucne">Dátumy sú približné a môžu sa meniť.</p>
-				</div>-->
-			<?php } else { ?>
 				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/aktualne-verzie.png" alt="Aktuálne verzie" /><img src="/wp-content/themes/mozillask/images/<?php $agent=$_SERVER["HTTP_USER_AGENT"]; $os='win'; $os_name='Windows'; if (strstr($agent,"Mac")) { $os='mac'; $os_name='Mac OS'; } elseif (strstr($agent,"Linux")) { $os='lin'; $os_name='Linux'; } echo $os ?>_ver.png" alt="system_image" /></div>
 				<div class="infopanel verzie">
 				<p><img src="/wp-content/images/logo/firefox35/firefox-36.png" alt="Firefox" /> <a href="<?php echo get_newprodukt('firefox','link') ?>" title="Prevziať Firefox <?php echo get_newprodukt('firefox','verzia'); echo ' (pre '.$os_name.')'; ?>">Firefox</a><br/><b><?php echo get_newprodukt('firefox','verzia') ?></b></p>
@@ -52,7 +44,6 @@
 				<p><img src="/wp-content/images/logo/seamonkey34.png" alt="SeaMonkey" /> <a href="<?php echo get_newprodukt('seamonkey','link') ?>" title="Prevziať SeaMonkey <?php echo get_newprodukt('seamonkey','verzia'); echo ' (pre '.$os_name.')'; ?>">SeaMonkey</a><br/><b><?php echo get_newprodukt('seamonkey','verzia') ?></b></p>
 				<small class="alignright tucne"><a href="/download/">Ďalšie verzie &raquo;</a></small><br/>
 				</div>
-        <?php } ?>
 			</div>
 			</div>
 

@@ -932,16 +932,22 @@ div#archnav
 	padding: 10px 0 0 0;
 }
 
-div#archnav ul, div#categnav ul, div#linknav ul
+div.left-sidebar-widget ul, div#archnav ul, div#categnav ul, div#linknav ul
 {
 	list-style-type: none;
 	margin: 0 0 0 10px;
 	padding: 0;
 }
 
-div#archnav ul li, div#categnav ul li, div#linknav ul li
+div.left-sidebar-widget ul li, div#archnav ul li, div#categnav ul li, div#linknav ul li
 {
 	padding: 3px 0 3px 0;
+}
+
+div.left-sidebar-widget
+{
+	margin: 0;
+	padding: 10px 0 0 0;
 }
 
 div#categnav

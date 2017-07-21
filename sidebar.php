@@ -19,37 +19,12 @@
 		</div>
 
 		<?php } ?>
-		
-		<div id="categnav"><h3>Rubriky</h3>
-				<ul>
-				<?php list_cats(0, '', 'name', 'asc', '', 1, 0, 1, 1, 1, 1, 0,'','','','','') ?>
-				</ul>
-		</div>
 
-		<div id="archnav"><h3>Písali sme...</h3>
-				<ul>
-				<?php
-          (date(n)>6) ? $tmp_mes = 6 : $tmp_mes = date(n);
-          wp_get_archives("type=monthly&limit=".$tmp_mes);
-          
-          ($tmp_mes > 6 ) ? $tmp_mes = date(Y)+1 : $tmp_mes = date(Y);
-          for ($i=$tmp_mes;$i>=2005;$i--) {
-            echo '<li><a href="'.get_year_link($i).'">Rok '.$i.'</a></li>';
-          }
-        ?>
-				</ul>
-		</div>
-
-		<div id="linknav"><h3>Odkazy</h3>
-				<ul>
-				<?php get_links('-1', '<li>', '</li>', '<br />', FALSE, 'id', TRUE, 
-FALSE, -1, TRUE); ?>
-				</ul>
-		</div>
-
-		<div id="supportnav"><h3>Podporujeme</h3>
-		<p class="center"><a href="http://contribute.mozilla.org/Mozilla_Community" title="Mozilla Communities"><img src="/wp-content/images/mctlogo.png" alt="Mozilla Communities" /></a></p>
-		<p class="center"><a href="http://www.sospreskoly.org"><img src="/wp-content/images/sospreskoly.png" title="Slobodný a otvorený softvér pre školy" alt="sospreskoly.org" /></a></p></div>
+		<?php
+			if ( is_active_sidebar( 'left_sidebar' ) ) {
+				dynamic_sidebar( 'left_sidebar' );
+			}
+		?>
 			
 	</div>
 

@@ -56,15 +56,11 @@
 			</div>
 			</div>
 
-			<div class="infopanel-top">
-			<div class="infopanel-bottom">
-				<div class="nadpis"><a href="https://forum.mozilla.sk"><img src="/wp-content/themes/mozillask/images/forum-mozilla-sk.png" alt="Fórum Mozilla.sk" /></a></div>
-				<div class="infopanel male">
-				<?php include (TEMPLATEPATH.'/syndication-sidebar.php'); ?>
-<p><span class="alignright tucne"><a href="https://forum.mozilla.sk" target="_blank">Pridajte sa aj vy! &raquo;</a></span></p><br/>
-				</div>
-			</div>
-			</div>
+			<?php
+				if ( is_active_sidebar( 'right_sidebar' ) ) {
+					dynamic_sidebar( 'right_sidebar' );
+				}
+			?>
 
 			<div class="infopanel-top">
 			<div class="infopanel-bottom">

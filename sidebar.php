@@ -1,32 +1,8 @@
 	<div id="sidebar">
 
 		<div id="pagenav-top"><div id="pagenav-bottom">
-<div id="page-nav">  
-		<ul>
-		<?php /*wp_list_pages('depth=2&sort_column=menu_order&title_li=');*/ ?> 
-		<li><a href="/zo-sveta-mozilly/" title="Správy zo sveta Mozilly">Zo sveta Mozilly</a></li>
-		<li><a href="/produkty/" title="Produkty">Produkty</a>
-			<ul>
-				<li><a href="/firefox/" title="Mozilla Firefox">Mozilla Firefox</a></li>
-				<li><a href="/thunderbird/" title="Mozilla Thunderbird">Mozilla Thunderbird</a></li>
-				<li><a href="/mozilla-sunbird/" title="Sunbird">Mozilla Sunbird</a></li>
-				<li><a href="/seamonkey/" title="SeaMonkey">SeaMonkey</a></li>
-				<li><a href="/produkty/ostatne/" title="Ďalšie produkty">Ďalšie produkty</a></li>
-			</ul>
-			</li>	
-		<li><a href="/download/" title="Na prevzatie">Na prevzatie</a>
-			<ul>
-				<li><a href="/download/slovenske-jazykove-baliky/" title="Jazykové balíčky">Jazykové balíky</a></li>
-				<li><a href="/download/prenosne/" title="Prenosné verzie (portables)">Prenosné verzie</a></li>
-			</ul>
-		</li>	
-		<li><a href="https://addons.mozilla.org/sk" title="Doplnky">Doplnky</a>
-		</li>	
-		<li><a href="/tipy-a-navody/" title="Tipy a návody">Tipy a návody</a></li>
-		<li><a href="/download/tapety-a-reklamne-pruzky/" title="Propagácia">Propagácia</a></li>
-		</ul>
-		</div></div> 
-</div>
+			<?php wp_nav_menu( array( 'theme_location' => 'sidebar', 'container_id' => 'page-nav' ) ); ?>
+		</div></div>
 
 		<?php if (is_page('test')) {?>
 

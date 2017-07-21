@@ -132,9 +132,7 @@ FALSE, -1, TRUE); ?>
 					<li><a style="text-decoration: none;" title="Články (RSS 2.0)" href="<?php bloginfo('rss2_url'); ?>" >Články <small>(RSS 2.0)</small></a></li>
 					<li><a style="text-decoration: none;" title="Články (Atom 0.3)" href="<?php bloginfo('atom_url'); ?>" >Články <small>(Atom 0.3)</small></a></li>
 					<li><a style="text-decoration: none;" title="Komentáre (RSS 2.0)" href="<?php bloginfo('comments_rss2_url'); ?>" >Komentáre <small>(RSS 2.0)</small></a></li>
-<!--					<li><a style="text-decoration: none;" title="Rozšírenia (RSS 2.0)" href="http://www.mozilla.sk/rozsirenia_rss.php" >Rozšírenia <small>(RSS 2.0)</small></a></li> -->
-					<li><a style="text-decoration: none;" title="Fórum (RSS 2.0)" href="https://forum.mozilla.sk/syndication.php" >Fórum <small>(RSS 2.0)</small></a></li>
-					<li><a style="text-decoration: none;" title="Fórum (Atom 0.3)" href="https://forum.mozilla.sk/syndication.php?atom" >Fórum <small>(Atom 0.3)</small></a></li>
+					<li><a style="text-decoration: none;" title="Fórum (Atom)" href="https://forum.mozilla.sk/app.php/feed">Fórum <small>(Atom)</small></a></li>
 					</ul>
 				</div>
 			</div>

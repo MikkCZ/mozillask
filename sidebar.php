@@ -4,22 +4,6 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'sidebar', 'container_id' => 'page-nav' ) ); ?>
 		</div></div>
 
-		<?php if (is_page('test')) {?>
-
-		<div id="vyhladavanie"><h3>Vyhľadávanie rozšírení</h3>
-
-			<form action="/rozsirenia/vyhladavanie/" method="post" id="vyhladavanie_form">
-				<input class="form-text" type="text" size="15" value="<?php echo wp_specialchars($hladat, 1); ?>" name="hladat" id="keys_vyh" />
-				<input id="submit_vyh" type="image" src="/wp-content/themes/mozillask/images/searcha.png"  /><br/>
-				<input type="hidden" value="1" name="popis" />
-				<input type="hidden" value="1" name="first_run" />
-				<input type="hidden" value="1" name="hl_popis" />
-			</form> 
-		
-		</div>
-
-		<?php } ?>
-
 		<?php
 			if ( is_active_sidebar( 'left_sidebar' ) ) {
 				dynamic_sidebar( 'left_sidebar' );
@@ -55,33 +39,10 @@
 
 			<div class="infopanel-top">
 			<div class="infopanel-bottom">
-			<?php if (is_page('test')) {?>
-				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/pripravovane-rozsirenia.png" alt="Pripravované rozšírenia" /></div>
-				<div class="infopanel" style="text-align: left">
-		
-				
-				
-				<?php $rozsirenia = $wpdb->get_results("SELECT nazov, addon FROM mozsk_rozsirenia
-										WHERE publikovat=0 OR publikovat=2 GROUP BY nazov ORDER BY nazov ASC"); 
-						if($rozsirenia) {
-						    echo '<ul>';			
-							foreach ($rozsirenia as $rozsirenie) 
-								{
-									echo '<li>';
-									if ($rozsirenie->addon != '' ) echo '<a style="text-decoration: none" href="https://addons.mozilla.org/extensions/moreinfo.php?id='.$rozsirenie->addon.'">'.$rozsirenie->nazov.'</a>';
-										else echo $rozsirenie->nazov;
-									echo '</li>';
-								}
-							echo '</ul>';	
-						}
-						else echo '<p>Momentálne nepripravujeme žiadne nové lokalizácie rozšírení, ak chcete nejaké preložiť vy, ozvite na nám.</p>';
-				 } else { ?>
 				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/napisali.png" alt="Napísali o Mozille" /></div>
 				<div class="infopanel male">
-									
 				<?php get_napisali(3,1); ?>
 				<br/><span class="alignright tucne"><a href="/napisali/">Ďalšie články &raquo;</a></span><br/>
-				<?php } ?>
 				</div>
 			</div>
 			</div>

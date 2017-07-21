@@ -5,7 +5,7 @@
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
   <meta http-equiv="content-language" content="sk" />
 
-	<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Archív správ <?php } ?> <?php wp_title(); /*if (is_page('test')) msk_title();*/?></title>
+	<title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> &raquo; Archív správ <?php } ?> <?php wp_title(); ?></title>
 
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
 	<meta name="keywords" content="mozilla, slovakia, slovensko, slovenčina, localization, lokalizácia, lokalizačná komunita, firefox, thunderbird, sunbird, camino, seamonkey, nvu, netscape, rozšírenia, pluginy, doplnky, download, stiahnutie, stiahnuť, fórum, podpora" />

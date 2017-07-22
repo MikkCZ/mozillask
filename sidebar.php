@@ -37,18 +37,4 @@
 				}
 			?>
 
-			<div class="infopanel-top">
-			<div class="infopanel-bottom">
-				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/kanaly-rss.png" alt="Kanály RSS" style="padding-right: 10px;"/></div>
-				<div class="infopanel">
-					<ul style="padding-left: 9px;padding-top: 9px;">
-					<li><a style="text-decoration: none;" title="Články (RSS 2.0)" href="<?php bloginfo('rss2_url'); ?>" >Články <small>(RSS 2.0)</small></a></li>
-					<li><a style="text-decoration: none;" title="Články (Atom 0.3)" href="<?php bloginfo('atom_url'); ?>" >Články <small>(Atom 0.3)</small></a></li>
-					<li><a style="text-decoration: none;" title="Komentáre (RSS 2.0)" href="<?php bloginfo('comments_rss2_url'); ?>" >Komentáre <small>(RSS 2.0)</small></a></li>
-					<li><a style="text-decoration: none;" title="Fórum (Atom)" href="https://forum.mozilla.sk/app.php/feed">Fórum <small>(Atom)</small></a></li>
-					</ul>
-				</div>
-			</div>
-			</div>
-
 	</div>

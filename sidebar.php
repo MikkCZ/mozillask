@@ -39,16 +39,6 @@
 
 			<div class="infopanel-top">
 			<div class="infopanel-bottom">
-				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/napisali.png" alt="Napísali o Mozille" /></div>
-				<div class="infopanel male">
-				<?php get_napisali(3,1); ?>
-				<br/><span class="alignright tucne"><a href="/napisali/">Ďalšie články &raquo;</a></span><br/>
-				</div>
-			</div>
-			</div>
-
-			<div class="infopanel-top">
-			<div class="infopanel-bottom">
 				<div class="nadpis"><img src="/wp-content/themes/mozillask/images/kanaly-rss.png" alt="Kanály RSS" style="padding-right: 10px;"/></div>
 				<div class="infopanel">
 					<ul style="padding-left: 9px;padding-top: 9px;">

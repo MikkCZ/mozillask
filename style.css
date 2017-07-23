@@ -68,7 +68,7 @@ body {
 	display: none;
 }
 
-#header form {
+#header form.vyhladavanie {
 
   position:absolute;
   top: 31px;
@@ -78,36 +78,6 @@ body {
   text-align: right; /* need for IE Mac */
   white-space: nowrap; /* for Opera */
 
-}
-
-#header form label {
-
-  color: #fff;
-  font-weight: bold;
-
-}
-
-#header form #submit {
-
-  padding: 0px;
-  margin: 0;
-  vertical-align: top;
-
-}
-
-#header form #keys {
-
-  width: 170px;
-  font-size: 85%;
-  border:  1px solid #9097A2;
-  background: #EAEBEB url(/wp-content/themes/mozillask/images/bg_input.png) bottom repeat-x;
-  padding: 2px;
-
-}
-
-#header form #q:hover, #header form #q:focus {
-
-  background: #fff;
 }
 
 /* Tab navigation */
@@ -2032,7 +2002,7 @@ dl.old-versions dd
 
 }
 
-#vyhladavanie form {
+form.vyhladavanie {
 
 /*  position: absolute;
   top: 16px;
@@ -2044,19 +2014,7 @@ dl.old-versions dd
 
 }
 
-
- #vyhladavanie2 form {
-
-/*  position: absolute;
-  top: 16px;
-  right: 15px;
-*/  padding: 0px 0 0px 0px;
-  margin: 0; /* need for IE Mac */
-  white-space: nowrap; /* for Opera */
-
-}
-
-#vyhladavanie form #submit_vyh, #vyhladavanie2 form #submit_vyh2 {
+form.vyhladavanie input[type=image] {
 
   padding: 0px;
   margin: 0;
@@ -2064,7 +2022,7 @@ dl.old-versions dd
 
 }
 
-#vyhladavanie form #keys_vyh, #vyhladavanie2 form #keys_vyh2 {
+form.vyhladavanie input[type=text] {
 
   width: 165px;
   font-size: 85%;
@@ -2072,11 +2030,6 @@ dl.old-versions dd
   background: #EAEBEB url(/wp-content/themes/mozillask/images/bg_input.png) bottom repeat-x;
   padding: 2px;
 
-}
-
-#vyhladavanie form #q:hover, #header form #q:focus, #vyhladavanie2 form #q:hover {
-
-  background: #fff;
 }
 
 .dnes {

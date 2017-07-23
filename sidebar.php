@@ -1,9 +1,5 @@
 	<div id="sidebar">
 
-		<div id="pagenav-top"><div id="pagenav-bottom">
-			<?php wp_nav_menu( array( 'theme_location' => 'sidebar', 'container_id' => 'page-nav' ) ); ?>
-		</div></div>
-
 		<?php
 			if ( is_active_sidebar( 'left_sidebar' ) ) {
 				dynamic_sidebar( 'left_sidebar' );

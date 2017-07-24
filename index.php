@@ -56,13 +56,13 @@
 
 	<?php if (have_posts()) : ?>
 
-		<?php include (TEMPLATEPATH . '/posts-list.php'); ?>
-		<?php include (TEMPLATEPATH . '/posts-list-navigation.php'); ?>
+		<?php include (TEMPLATEPATH . '/includes/posts-list.php'); ?>
+		<?php include (TEMPLATEPATH . '/includes/posts-list-navigation.php'); ?>
 
 	<?php else : ?>
 
 		<div class="error">Žiaľ, hľadáte niečo, čo sa tu nenachádza.</div>
-		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+		<?php include (TEMPLATEPATH . '/includes/searchform.php'); ?>
 
 	<?php endif; ?>
 

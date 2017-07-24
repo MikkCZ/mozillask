@@ -30,7 +30,7 @@
 		<h1><a href="<?php echo get_settings('home'); ?>" title="<?php bloginfo('description'); ?>"><?php bloginfo('name'); ?></a></h1>
 		<div class="description"><?php bloginfo('description'); ?></div>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
+		<?php include (TEMPLATEPATH . "/includes/searchform.php"); ?>
 </div>
 <hr />
 

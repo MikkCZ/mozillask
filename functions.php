@@ -23,5 +23,10 @@ function register_mozillask_widget_areas() {
   ) );
 }
 add_action( 'widgets_init', 'register_mozillask_widget_areas' );
+
+function filter_mozillask_search_templete() {
+  return locate_template('archive.php');
+}
+add_filter( 'search_template', 'filter_mozillask_search_templete' );
 ?>
 

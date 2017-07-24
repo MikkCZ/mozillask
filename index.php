@@ -79,61 +79,21 @@ $items = array_slice($feed->items, 0, $limit+1); // specify first and last item
    <?php endif;
    endif; ?>
 
+	<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : '1&posts_per_page=5'; query_posts("cat=-$spravicky&paged=$paged"); ?>
 
+	<?php if (have_posts()) : ?>
 
+		<?php include (TEMPLATEPATH . '/posts-list.php'); ?>
+		<?php include (TEMPLATEPATH . '/posts-list-navigation.php'); ?>
 
-
-	<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : '1&posts_per_page=5'; query_posts("cat=-$spravicky&paged=$paged"); 
-
-	 if (have_posts()) : while (have_posts()) : the_post();  ?>
-    		
-				
-			<div class="post-top">
-			<div class="post-bottom">
-				<div class="post">
-					
-					<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanentný odkaz na <?php the_title(); ?>"><?php the_title(); ?></a></h2>
-					<small><?php echo formatdatum(get_post_time())/*the_time('j.n.Y \o G:i')*/ ?>, autor: <?php the_author() ?></small>
-					<div class="entry">
-						<?php the_content('Čítať zvyšok tohto článku &raquo;'); ?>
-					</div>
-					<p class="postmetadata">Rubrika <?php the_category(', ') ?> <strong>|</strong> <?php edit_post_link('Upraviť','','<strong> |</strong>'); ?>  <?php comments_popup_link('Žiadne komentáre &#187;', 'Komentáre (1) &#187;', 'Komentáre (%) &#187;'); ?></p>
-				</div>
-			</div>
-			</div>
-        
-   		<?php endwhile; ?>
-
-		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo; Staršie články',0) ?></div>
-			<div class="alignright"><?php previous_posts_link('Novšie články &raquo;',0) ?></div>
-		</div>
-		
 	<?php else : ?>
 
-		<h2 class="center">Nenájdené</h2>
-		<p class="center"><?php _e("Žiaľ, hľadáte niečo, čo sa tu nenachádza."); ?></p>
-		<?php include (TEMPLATEPATH . "/searchform.php"); ?>
+		<div class="error">Žiaľ, hľadáte niečo, čo sa tu nenachádza.</div>
+		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
 
 	<?php endif; ?>
-	
-	<?php
-	$nah = rand(1, 3);
-	if ($nah == 2) $nah = 'tb2';
-	else if ($nah == 3) $nah = 'sb';
-	else $nah = 'fx';
-	?>
-<!-- <p class="center">
-  <object type="application/x-shockwave-flash" data="/wp-content/images/banners/flash/banner-<?php echo $nah ?>.swf" width="468" height="60" id="FlashMovie" >
-    <param name="movie" value="/wp-content/images/banners/flash/banner-<?php echo $nah ?>.swf" />
-    <param name="quality" value="high" />
-    <param name="swliveconnect" value="true" />
-    <param name="wmode" value="transparent" />
-  </object>
-  <br/><small><a href="https://www.mozilla.sk/">Mozilla.sk - základňa slovenskej lokalizačnej komunity</a><br/><br/>Banery vhodné pre vašu stránku nájdete v sekcii <a href="/download/tapety-a-reklamne-pruzky/">Propagácia</a>.</small></p> -->
 
 	</div>
 
-
-
 <?php get_footer(); ?>
+

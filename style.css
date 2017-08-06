@@ -742,6 +742,10 @@ p.screen
 	margin-bottom: 0px;
 }
 
+.rsswidget .rss-widget-icon {
+	display: none;
+}
+
 .infopanel-top
 {
 	background: transparent url(/wp-content/themes/mozillask/images/infopanel_top.png) no-repeat top left;

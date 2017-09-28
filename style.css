@@ -1640,19 +1640,21 @@ a[hreflang]:after
 
 #zo-sveta-mozilly
 {
-	border: 0
+	border: 0;
+	width: 554px;
 }
 
 #zo-sveta-mozilly div
 {
 	display: inline-block;
-	width: 49%;
+	width: 270px;
 	vertical-align: top;
 	padding: 0;
+	margin: 0 0 1em 0;
 }
 
 #zo-sveta-mozilly div.first {
-	padding-right: 0.5em;
+	padding-right: 6px;
 }
 
 #zo-sveta-mozilly h3,

@@ -1306,7 +1306,7 @@ div.error
 }
 
 .firefox_arch {
-  background: rgb(213, 225, 238) url('/wp-content/images/logo/fox_bg.gif') no-repeat scroll left top;
+  background: rgb(213, 225, 238) url('/wp-content/images/logo/fox_bg.png') no-repeat scroll left top;
 }
 
 .firefox_new_arch {
@@ -1884,7 +1884,7 @@ h2#dl-sm-logotype
 
 .dl-ff-logo
 {
-	background: transparent url(/wp-content/themes/mozillask/images/dl-ff35-logo.png) no-repeat top right;
+	background: transparent url(/wp-content/themes/mozillask/images/dl-ff57-logo.png) no-repeat top right;
 }
 
 .dl-tb-logo

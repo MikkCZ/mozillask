@@ -16,10 +16,10 @@ function register_mozillask_widget_areas() {
   register_sidebar( array(
     'name'          => 'Right sidebar',
     'id'            => 'right_sidebar',
-    'before_widget' => '<div class="infopanel-top"><div class="infopanel-bottom">',
-    'after_widget'  => '</div></div></div>',
+    'before_widget' => '<div class="infopanel-top"></div><div class="infopanel">',
+    'after_widget'  => '</div><div class="infopanel-bottom"></div>',
     'before_title'  => '<div class="nadpis">',
-    'after_title'   => '</div><div class="infopanel male">',
+    'after_title'   => '</div>',
   ) );
 }
 add_action( 'widgets_init', 'register_mozillask_widget_areas' );

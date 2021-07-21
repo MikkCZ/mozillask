@@ -1,10 +1,10 @@
 /*  
 Theme Name: Mozilla.sk
-Theme URI: http://www.mozilla.sk/
+Theme URI: https://github.com/MozillaSK/mozillask
 Description: Mozilla Slovakia theme based on mozilla-europe.org look
-Version: 3.0
+Version: 4.0
 Author: Vlado Valaštiak & Braňo Pavelka
-Author URI: http://www.mozilla.sk/
+Author URI: https://www.mozilla.sk/
 */
 
 h1,h2,h3,h4,h5,h6,pre,code, kbd { font-size:1em; }
@@ -702,6 +702,7 @@ p.screen
 	background-color: #F1F4FB;
 	border-left: 1px solid #CCD9F2;
 	border-right: 1px solid #CCD9F2;
+	font-size: 85%;
 }
 
 .infopanel h2
@@ -717,6 +718,13 @@ p.screen
 	padding-bottom: 4px;
 	padding-top: 0px;
 	
+}
+
+.infopanel .nadpis,
+.infopanel .verzie
+{
+	border: none;
+	font-size: 120%;
 }
 
 .nadpis

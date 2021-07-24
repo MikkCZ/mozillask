@@ -1,4 +1,5 @@
 <?php
+
 function register_mozillask_menus() {
   register_nav_menu( 'primary', __( 'Primary Menu', 'mozillask' ) );
 }
@@ -28,4 +29,3 @@ function filter_mozillask_search_templete() {
   return locate_template('archive.php');
 }
 add_filter( 'search_template', 'filter_mozillask_search_templete' );
-?>

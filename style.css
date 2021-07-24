@@ -1,4 +1,4 @@
-/*  
+/*
 Theme Name: Mozilla.sk
 Theme URI: https://github.com/MozillaSK/mozillask
 Description: Mozilla Slovakia theme based on mozilla-europe.org look
@@ -34,7 +34,7 @@ body {
 :link:active, :link:active {color: #000;}
 
 #header {
-	background: #788baf url(/wp-content/themes/mozillask/images/header_mozsk4.png) no-repeat; 
+	background: #788baf url(/wp-content/themes/mozillask/images/header_mozsk4.png) no-repeat;
 /*	background: #788baf url(/wp-content/themes/mozillask/images/header_mozsk_vianoce_univer.png) no-repeat;*/
 	padding: 0;
 	margin: 0 auto;
@@ -43,7 +43,7 @@ body {
 	position: relative;
 }
 
-#header h1 
+#header h1
 {
 	font-size: 2px;
 	width: 980px;
@@ -53,7 +53,7 @@ body {
 	z-index: 100;
 }
 
-#header h1 a 
+#header h1 a
 {
 	display: block;
 	width: 980px;
@@ -128,7 +128,7 @@ background-position: 100% -0px;
   color: #fff;
 
   text-decoration: none;
-  
+
   font-size: 85%;
 
 }
@@ -290,7 +290,7 @@ kbd.btn
 	font-family: Tahoma, sans-serif;
 }
 
-h2 
+h2
 {
 	font-weight: normal;
 	margin: 0 0 0.4em 0;
@@ -350,7 +350,7 @@ h3
 	padding-bottom: 4px;
 }
 
-h3 a 
+h3 a
 {
 	color: #000;
 	text-decoration: none;
@@ -416,7 +416,7 @@ h1, h1 a, h1 a:hover, h1 a:visited
 
 
 
-.commentmetadata 
+.commentmetadata
 {
 	font-weight: normal;
 }
@@ -430,14 +430,14 @@ small, .nocomments, .postmetadata, blockquote, strike
 	color: #000000;
 }
 
-code 
+code
 {
 	font: 1.1em 'Courier New', Courier, Fixed;
 }
 
 .zdroj {
- 	
-   border: 1px solid rgb(69, 146, 71);	
+
+   border: 1px solid rgb(69, 146, 71);
 font: 12px 'Courier New', Courier, Fixed;
 background: #E8F9F2;
     text-align: left;
@@ -449,8 +449,8 @@ background: #E8F9F2;
 }
 
 .zdrojprop {
- 	
-	border: 1px solid rgb(69, 146, 71);	
+
+	border: 1px solid rgb(69, 146, 71);
 	font-size: 8px;
 	background: #E8F9F2;
     	text-align: left;
@@ -471,12 +471,12 @@ acronym, abbr, span.caps
 	font-size: 9pt;
 }
 
-#wp-calendar a 
+#wp-calendar a
 {
 	text-decoration: none;
 }
 
-#wp-calendar caption 
+#wp-calendar caption
 {
 	font-weight: bold;
   font-size: 1.3em;
@@ -493,13 +493,13 @@ acronym, abbr, span.caps
 
 /* Begin Structure */
 
-body 
+body
 {
 	margin: 0;
-	padding: 0; 
+	padding: 0;
 }
 
-#page 
+#page
 {
 	background-color: white;
 	margin: 10px auto;
@@ -529,24 +529,13 @@ body
 
 .post
 {
-	padding: 0 15px 0 15px;
-	margin: 0;
+	background-color: #f1f4fb;
+	border-radius: 11px;
+	padding: 11px 15px 1px 15px;
+	margin: 0 0 15px 0;
+	border: 1px solid #CCD9F2;
 	text-align: justify;
 	position: relative;
-}
-
-.post-top
-{
-	background: transparent url(/wp-content/themes/mozillask/images/post_top.png) no-repeat top left;
-	padding: 11px 0 0 0;
-	margin: 0;
-}
-
-.post-bottom
-{
-	background: transparent url(/wp-content/themes/mozillask/images/post_bottom.png) no-repeat bottom left;
-	padding: 0 0 1px 0;
-	margin: 0 0 15px 0;
 }
 
 .widecolumn .post
@@ -554,13 +543,13 @@ body
 	margin: 0;
 }
 
-.narrowcolumn .postmetadata 
+.narrowcolumn .postmetadata
 {
 	padding: 5px;
 	font-size: 80%;
 }
 
-.widecolumn .postmetadata 
+.widecolumn .postmetadata
 {
 	margin: 30px 0 0 0;
 }
@@ -612,14 +601,14 @@ img.centered
 	margin-right: auto;
 }
 
-img.alignright 
+img.alignright
 {
 	padding: 4px;
 	margin: 0 0 2px 7px;
 	display: inline;
 }
 
-img.alignleft 
+img.alignleft
 {
 	padding: 4px;
 	margin: 0 7px 2px 0;
@@ -631,12 +620,12 @@ img.alignleft
 	float: right;
 }
 
-.alignleft 
+.alignleft
 {
 	float: left
 }
 
-img.padanie 
+img.padanie
 {
 	display: block;
 	margin-left: auto;
@@ -650,13 +639,13 @@ p.screen
 }
 /* End Images */
 
-.odkazback 
+.odkazback
 {
 	display: block;
 	float: right;
 }
 
-.linkback 
+.linkback
 {
 	width: 100%;
 	height: 30px;
@@ -697,11 +686,11 @@ p.screen
 
 .infopanel
 {
-	padding: 0px 5px 0px 5px;
-	margin: 0;
-	background-color: #F1F4FB;
-	border-left: 1px solid #CCD9F2;
-	border-right: 1px solid #CCD9F2;
+	background-color: #f1f4fb;
+	border-radius: 11px;
+	padding: 11px 5px 11px 5px;
+	margin: 0 0 15px 0;
+	border: 1px solid #CCD9F2;
 	font-size: 85%;
 }
 
@@ -717,7 +706,7 @@ p.screen
 	margin-bottom: 0px;
 	padding-bottom: 4px;
 	padding-top: 0px;
-	
+
 }
 
 .infopanel .nadpis,
@@ -738,13 +727,13 @@ p.screen
 	border-bottom: 1px solid #CCD9F2;
 	border-left: 1px solid #CCD9F2;
 	border-right: 1px solid #CCD9F2;
-	text-align: center; 
+	text-align: center;
 }
 
 .nadpis img
 {
-	text-align: center; 
-	margin: auto auto; 
+	text-align: center;
+	margin: auto auto;
 	display: block;
 	padding-bottom: 4px;
 	margin-bottom: 0px;
@@ -752,20 +741,6 @@ p.screen
 
 .rsswidget .rss-widget-icon {
 	display: none;
-}
-
-.infopanel-top
-{
-	background: transparent url(/wp-content/themes/mozillask/images/infopanel_top.png) no-repeat top left;
-	padding: 11px 0 0 0;
-	margin: 0;
-}
-
-.infopanel-bottom
-{
-	background: transparent url(/wp-content/themes/mozillask/images/infopanel_bottom.png) no-repeat bottom left;
-	padding: 0 0 11px 0;
-	margin: 0 0 15px 0;
 }
 
 .infopanel ul
@@ -820,19 +795,12 @@ div.left-sidebar-widget .menu-sidebar-menu-container ul li
 	padding: 0;
 }
 
-div.left-sidebar-widget .menu-sidebar-menu-container,
-div#pagenav-top
+div.left-sidebar-widget .menu-sidebar-menu-container
 {
-	background: transparent url(/wp-content/themes/mozillask/images/pagenav_top.png) no-repeat top left;
-	padding: 11px 0 0 0;
+	background-color: #ccd9f2;
+	border-radius: 11px;
+	padding: 11px 0 11px 0;
 	margin: 0;
-}
-
-div.left-sidebar-widget .menu-sidebar-menu-container >ul,
-div#pagenav-bottom
-{
-	background: transparent url(/wp-content/themes/mozillask/images/pagenav_bottom.png) no-repeat bottom left;
-	padding: 0 0 11px 0;
 }
 
 div.menu-sidebar-menu-container,
@@ -900,27 +868,6 @@ div#page-nav li a:hover
 	background: #ccd9f2;
 }
 
-div#searchnav-top
-{
-	background: transparent url(/wp-content/themes/mozillask/images/pagenav_top.png) no-repeat top left;
-	padding: 11px 0 0 0;
-	margin: 0;
-}
-
-div#searchnav-bottom
-{
-	background: transparent url(/wp-content/themes/mozillask/images/pagenav_bottom.png) no-repeat bottom left;
-	padding: 0 0 11px 0;
-}
-
-div#searchnav
-{
-	margin: 0;
-	padding: 0;
-	background: #e0e9e9 url(/wp-content/themes/mozillask/images/pagenav_bottom.png) no-repeat bottom left;
-	font-size: 90%;
-}
-
 div#archnav
 {
 	margin: 0;
@@ -975,13 +922,13 @@ div#linknav dd
 	padding: 5px 0 10px 20px;
 }
 
-.postmetadata ul, .postmetadata li 
+.postmetadata ul, .postmetadata li
 {
 	display: inline;
 	list-style-type: none;
 	list-style-image: none;
 }
-	
+
 .postmetadata p
 {
 	margin: 0;
@@ -993,20 +940,20 @@ div#linknav dd
 
 /* Begin Form Elements */
 
-#searchform 
+#searchform
 {
 	margin: 10px auto;
-	padding: 5px 3px; 
+	padding: 5px 3px;
 	text-align: center;
 }
 
-#sidebar #searchform #s 
+#sidebar #searchform #s
 {
 	width: 115px;
 	padding: 2px;
 }
 
-#sidebar #searchsubmit 
+#sidebar #searchsubmit
 {
 	padding: 1px;
 }
@@ -1015,7 +962,7 @@ div#linknav dd
 	text-align:center;
 }
 
-select 
+select
 {
 	width: 130px;
 }
@@ -1110,7 +1057,7 @@ select
 }
 
 #wp-calendar td.pad:hover { /* Doesn't work in IE */
-	background-color: #fff; 
+	background-color: #fff;
 }
 /* End Calendar */
 
@@ -1138,82 +1085,6 @@ blockquote cite {
 	text-align: center;
 }
 
-.downloadarea {
-	text-align: center;
-	position: relative;
-	width: 100%;
-	left: 10px;
-}
-
-.downloadbox1 {
-	position: relative;
-	left: 0px;
-	top: 0px;
-}
-
-.downloadbox2 {
-	position: absolute;
-	left: 240px;
-	top: 0px;
-	width: 240px;
-}
-
-.download {
-	text-align: left;
-	padding-left: 50px;
-	padding-top: 10px;
-	padding-bottom: 0;
-	background: url(/wp-content/images/logo/install.png) no-repeat;
-	background-position: 10px center;
-}
-
-.download a {
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.download-top
-{
-	background: transparent url(/wp-content/themes/mozillask/images/download_top.png) no-repeat top left;
-	padding: 11px 0 0 0;
-	margin: 0;
-}
-
-.download-bottom
-{
-	background: transparent url(/wp-content/themes/mozillask/images/download_bottom.png) no-repeat bottom left;
-	padding: 0 0 11px 0;
-	margin: 0 0 15px 0;
-}
-
-.download2  {
-	text-align: left;
-	padding-left: 35px;
-	padding-top: 0px;
-	padding-bottom: 5px;
-	background: url(/wp-content/images/logo/install.png) no-repeat;
-	background-position: 5px center;
-}
-
-.download2 a {
-	text-decoration: none;
-	font-weight: bold;
-}
-
-.download2-top
-{
-	background: transparent url(/wp-content/themes/mozillask/images/download2_top.png) no-repeat top left;
-	padding: 11px 0 0 0;
-	margin: 0;
-}
-
-.download2-bottom
-{
-	background: transparent url(/wp-content/themes/mozillask/images/download2_bottom.png) no-repeat bottom left;
-	padding: 0 0 11px 0;
-	margin: 0 0 15px 0;
-}
-
 div.error
 {
 	background: transparent url(/wp-content/images/warning.png) no-repeat center left;
@@ -1224,7 +1095,7 @@ div.error
 .upozofrnenie
 {
 	border: 1px solid rgb(128, 0, 0);
-	border-radius: 10px;	
+	border-radius: 10px;
 	background: rgb(255,206,206) url(/wp-content/images/warning.png) no-repeat;
 	background-position: 5px center;
 	padding: 10px 10px 10px 50px;
@@ -1241,7 +1112,7 @@ div.error
 .info
 {
 	border: 1px solid rgb(69, 146, 71);
-	border-radius: 10px;	
+	border-radius: 10px;
 	background: #E8F9F2 url(/wp-content/images/info.png) no-repeat;
 	background-position: 5px center;
 	padding: 10px 10px 10px 50px;
@@ -1253,7 +1124,7 @@ div.error
 	border-radius: 10px;
 	background: #E8F9F2 url(/wp-content/images/logo/install.png) no-repeat;
 	background-position: 10px center;
-  padding-top: 10px;	
+  padding-top: 10px;
 }
 
 .one_box
@@ -1299,11 +1170,11 @@ div.error
 
 .podciarknute {
 	text-decoration: underline;
-}	
+}
 
 .nounderline {
 	text-decoration: none;
-}	
+}
 
 .arch {
   background: transparent;
@@ -1502,7 +1373,7 @@ div.error
 	padding: 0;
 }
 
-#product li 
+#product li
 {
 	border-top: 1px solid rgb(180, 198, 215);
 	border-left: 1px solid rgb(180, 198, 215);
@@ -1555,12 +1426,12 @@ ul.rozsirenia li a:hover {
 
 ul.rozsirenia li.small {
 	padding: 6px 3px 6px 3px;
-	 
+
 }
 
 ul.rozsirenia li.small a {
 	text-decoration: none;
-/*	display: block;*/ 
+/*	display: block;*/
 	font-weight: bold;
 	font-size: 10px;
 	padding-left: 10px;
@@ -1575,7 +1446,7 @@ ul.rozsirenia li.small img {
 	vertical-align: middle;
 	position: relative;
 	left: 5px;
-} 
+}
 
 ul.rozsirenia li img {
 	vertical-align: middle;
@@ -1609,12 +1480,12 @@ INPUT.button {
 	font-size: 11px;
     margin-left: 10px;
     margin-right: 10px;
-	background: transparent;	
+	background: transparent;
 }
 
 .ikonaa:hover
 {
-	background: rgb(213, 225, 238); 
+	background: rgb(213, 225, 238);
 }
 
 hr {
@@ -1641,16 +1512,10 @@ a[hreflang]:after
 
 .tucne
 {
-	font-weight: bold;	
+	font-weight: bold;
 }
 
 /* Begin Tables */
-
-#zo-sveta-mozilly
-{
-	border: 0;
-	width: 554px;
-}
 
 #zo-sveta-mozilly div
 {
@@ -1694,8 +1559,8 @@ a[hreflang]:after
 }
 
 .tabulka td.cervena {
-		
-		color: red;	
+
+		color: red;
 }
 
 .tabulka tr.server {
@@ -1711,7 +1576,7 @@ a[hreflang]:after
 
 	border: 2px solid #ADB6CA;
 	text-align: center;
-	background-color: #e0e8f7; 
+	background-color: #e0e8f7;
 	padding: 0.1em 0.5em;
 }
 
@@ -1750,7 +1615,7 @@ a[hreflang]:after
 
 .mac, .unix {
 	display: none;
-}	
+}
 
 table {
   font-size: 100%;
@@ -2002,44 +1867,7 @@ dl.old-versions dd
 	margin: 0 0 0 1em;
 }
 
-
-/* Start SITEMAP */
-
-.ddsg-pagenav {
- 
-	text-align: center; 
-	margin: 0;
-	padding: 1px 0 0 0;
-	background: url(/wp-content/themes/mozillask/images/nav.png) no-repeat top center;
-	font-size: 90%;
-	height: 25px;
-}
-
-.ddsg-pagenav a {
-
-	font-weight: bold;
-}
-
-.ddsg-wrapper a {
-
-	text-decoration: none;
-}
-
-
-.ddsg-wrapper ul li {
-
-	font-weight: bold;
-
-}
-
-.ddsg-wrapper ul li ul li {
-
-	font-weight: normal;
-
-}
-
 form.vyhladavanie {
-
 /*  position: absolute;
   top: 16px;
   right: 15px;
@@ -2047,25 +1875,20 @@ form.vyhladavanie {
   margin: 0; /* need for IE Mac */
   text-align: center; /* need for IE Mac */
   white-space: nowrap; /* for Opera */
-
 }
 
 form.vyhladavanie input[type=image] {
-
   padding: 0px;
   margin: 0;
   vertical-align: top;
-
 }
 
 form.vyhladavanie input[type=text] {
-
   width: 165px;
   font-size: 85%;
   border:  1px solid #9097A2;
-  background: #EAEBEB url(/wp-content/themes/mozillask/images/bg_input.png) bottom repeat-x;
+  background: #eaebeb bottom repeat-x;
   padding: 2px;
-
 }
 
 .dnes {
@@ -2075,4 +1898,3 @@ form.vyhladavanie input[type=text] {
 .vcera {
   color: black;
 }
-/* End SITEMAP */

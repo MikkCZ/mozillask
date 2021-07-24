@@ -16,8 +16,8 @@ function register_mozillask_widget_areas() {
   register_sidebar( array(
     'name'          => 'Right sidebar',
     'id'            => 'right_sidebar',
-    'before_widget' => '<div class="infopanel-top"></div><div class="infopanel">',
-    'after_widget'  => '</div><div class="infopanel-bottom"></div>',
+    'before_widget' => '<div class="infopanel">',
+    'after_widget'  => '</div>',
     'before_title'  => '<div class="nadpis">',
     'after_title'   => '</div>',
   ) );
@@ -29,4 +29,3 @@ function filter_mozillask_search_templete() {
 }
 add_filter( 'search_template', 'filter_mozillask_search_templete' );
 ?>
-

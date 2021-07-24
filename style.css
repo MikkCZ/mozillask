@@ -738,12 +738,12 @@ div#page-nav li {
 }
 
 div#page-nav li a.dl:hover {
-  background: #ccd9f2 url(/wp-content/images/logo/install.png) no-repeat;
+  background: #ccd9f2 url(/wp-content/themes/mozillask/images/logo/install.png) no-repeat;
   background-position: 94% center;
 }
 
 div#page-nav li a.dl {
-  background: #d1ddf3 url(/wp-content/images/logo/install.png) no-repeat;
+  background: #d1ddf3 url(/wp-content/themes/mozillask/images/logo/install.png) no-repeat;
   background-position: 94% center;
 }
 
@@ -981,7 +981,7 @@ blockquote cite {
 }
 
 div.error {
-  background: transparent url(/wp-content/images/warning.png) no-repeat center left;
+  background: transparent url(/wp-content/themes/mozillask/images/warning_bigger.png) no-repeat center left;
   padding-left: 50px;
   min-height: 26px;
 }
@@ -989,14 +989,14 @@ div.error {
 .upozofrnenie {
   border: 1px solid rgb(128, 0, 0);
   border-radius: 10px;
-  background: rgb(255, 206, 206) url(/wp-content/images/warning.png) no-repeat;
+  background: rgb(255, 206, 206) url(/wp-content/themes/mozillask/images/warning_bigger.png) no-repeat;
   background-position: 5px center;
   padding: 10px 10px 10px 50px;
   margin: 0;
 }
 
 .tip {
-  background: transparent url(/wp-content/images/tip.png) no-repeat;
+  background: transparent url(/wp-content/themes/mozillask/images/tip.png) no-repeat;
   background-position: 5px center;
   padding-left: 50px;
 }
@@ -1004,7 +1004,7 @@ div.error {
 .info {
   border: 1px solid rgb(69, 146, 71);
   border-radius: 10px;
-  background: #e8f9f2 url(/wp-content/images/info.png) no-repeat;
+  background: #e8f9f2 url(/wp-content/themes/mozillask/images/info.png) no-repeat;
   background-position: 5px center;
   padding: 10px 10px 10px 50px;
 }
@@ -1012,7 +1012,7 @@ div.error {
 .dl_info {
   border: 1px solid rgb(69, 146, 71);
   border-radius: 10px;
-  background: #e8f9f2 url(/wp-content/images/logo/install.png) no-repeat;
+  background: #e8f9f2 url(/wp-content/themes/mozillask/images/logo/install.png) no-repeat;
   background-position: 10px center;
   padding-top: 10px;
 }
@@ -1026,22 +1026,22 @@ div.error {
 }
 
 .new {
-  background: transparent url(/wp-content/images/logo/new.gif) no-repeat;
+  background: transparent url(/wp-content/themes/mozillask/images/logo/new.gif) no-repeat;
   background-position: right center;
 }
 
 .update {
-  background: transparent url(/wp-content/images/logo/update.gif) no-repeat;
+  background: transparent url(/wp-content/themes/mozillask/images/logo/update.gif) no-repeat;
   background-position: right center;
 }
 
 .new2 {
-  background: transparent url(/wp-content/images/logo/new2.png) no-repeat;
+  background: transparent url(/wp-content/themes/mozillask/images/logo/new2.png) no-repeat;
   background-position: right center;
 }
 
 .update2 {
-  background: transparent url(/wp-content/images/logo/update2.png) no-repeat;
+  background: transparent url(/wp-content/themes/mozillask/images/logo/update2.png) no-repeat;
   background-position: right center;
 }
 
@@ -1070,59 +1070,59 @@ div.error {
 }
 
 .firefox_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/fox_bg.png") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/fox_bg.png") no-repeat scroll left top;
 }
 
 .firefox_new_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/fox35_bg.png") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/fox35_bg.png") no-repeat scroll left top;
 }
 
 .thunderbird2_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/tb_bg.gif") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/tb_bg.gif") no-repeat scroll left top;
 }
 
 .thunderbird_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/tb3_bg.png") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/tb3_bg.png") no-repeat scroll left top;
 }
 
 .sunbird_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/sun_bg.gif") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/sun_bg.gif") no-repeat scroll left top;
 }
 
 .kompozer_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/kom_bg.png") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/kom_bg.png") no-repeat scroll left top;
 }
 
 .camino_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/cam_bg.gif") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/cam_bg.gif") no-repeat scroll left top;
 }
 
 .mozilla-sunbird_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/sun_bg.gif") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/sun_bg.gif") no-repeat scroll left top;
 }
 
 .seamonkey_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/sm_bg.png") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/sm_bg.png") no-repeat scroll left top;
 }
 
 .nvu_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/nvu_bg.gif") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/nvu_bg.gif") no-repeat scroll left top;
 }
 
 .kom_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/kom_bg.png") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/kom_bg.png") no-repeat scroll left top;
 }
 
 .netscape_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/ns_bg.gif") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/ns_bg.gif") no-repeat scroll left top;
 }
 
 .mozilla-suite_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/moz_bg.gif") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/moz_bg.gif") no-repeat scroll left top;
 }
 
 .flock_arch {
-  background: rgb(213, 225, 238) url("/wp-content/images/logo/flo_bg.png") no-repeat scroll left top;
+  background: rgb(213, 225, 238) url("/wp-content/themes/mozillask/images/logo/flo_bg.png") no-repeat scroll left top;
 }
 
 .arch h1,
@@ -1171,59 +1171,59 @@ div.error {
 }
 
 .ico-win {
-  background-image: url("/wp-content/images/logo/win_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/win_small.png");
 }
 
 .ico-lin {
-  background-image: url("/wp-content/images/logo/lin_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/lin_small.png");
 }
 
 .ico-mac {
-  background-image: url("/wp-content/images/logo/mac_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/mac_small.png");
 }
 
 .ico-ff {
-  background-image: url("/wp-content/images/logo/ff_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/ff_small.png");
 }
 
 .ico-fx {
-  background-image: url("/wp-content/images/logo/fx_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/fx_small.png");
 }
 
 .ico-tb {
-  background-image: url("/wp-content/images/logo/tb_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/tb_small.png");
 }
 
 .ico-ms {
-  background-image: url("/wp-content/images/logo/ms_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/ms_small.png");
 }
 
 .ico-nvu {
-  background-image: url("/wp-content/images/logo/nvu_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/nvu_small.png");
 }
 
 .ico-sn {
-  background-image: url("/wp-content/images/logo/sn_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/sn_small.png");
 }
 
 .ico-ns {
-  background-image: url("/wp-content/images/logo/ns_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/ns_small.png");
 }
 
 .ico-sm {
-  background-image: url("/wp-content/images/logo/sm_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/sm_small.png");
 }
 
 .ico-fn {
-  background-image: url("/wp-content/images/logo/fennec-16.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/fennec-16.png");
 }
 
 .ico-fl {
-  background-image: url("/wp-content/images/logo/fl_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/fl_small.png");
 }
 
 .ico-sng {
-  background-image: url("/wp-content/images/logo/sng_small.png");
+  background-image: url("/wp-content/themes/mozillask/images/logo/sng_small.png");
 }
 
 #product {

@@ -24,13 +24,15 @@ if ( !is_wp_error( $feed ) ) {
 ?>
 
 <?php if ( !empty($feed_items) ) : ?>
-  <div class="post" id="zo-sveta-mozilly">
-    <img src="/wp-content/themes/mozillask/images/spravy-svet.png" alt="Správy zo sveta Mozilly" /><br/>
-    <div class="first">
+  <div class="post" id="feed-mozilla-cz">
+    <h3>Správy zo sveta Mozilly</h3>
+    <div>
       <?php $feed_item = $feed_items[0]; ?>
-      <h3><a href="<?php echo $feed_item->get_permalink(); ?>" target="_blank"><?php echo $feed_item->get_title(); ?></a></h3>
+      <h4><a href="<?php echo $feed_item->get_permalink(); ?>" target="_blank"><?php echo $feed_item->get_title(); ?></a></h4>
       <small><?php echo formatdatum(strtotime($feed_item->get_date())); ?></small>
-      <p><?php echo $feed_item->get_description(); ?></p>
+      <div class="entry">
+        <p><?php echo $feed_item->get_description(); ?></p>
+      </div>
     </div>
     <div>
       <?php for ( $i = 1; $i < count($feed_items); $i++ ) : ?>
@@ -38,7 +40,7 @@ if ( !is_wp_error( $feed ) ) {
         <h4><a href="<?php echo $feed_item->get_permalink(); ?>" target="_blank"><?php echo $feed_item->get_title(); ?></a></h4>
         <small><?php echo formatdatum(strtotime($feed_item->get_date())); ?></small><br/>
       <?php endfor; ?>
-      <small class="alignright tucne"><a href="https://www.mozilla.cz/" target="_blank">ďalšie správy na Mozilla.cz&raquo;</a></small>
+      <small class="more tucne"><a href="https://www.mozilla.cz/" target="_blank">ďalšie správy na Mozilla.cz&raquo;</a></small>
     </div>
   </div>
 <?php endif; ?>

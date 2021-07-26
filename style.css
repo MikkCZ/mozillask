@@ -1365,21 +1365,13 @@ a[hreflang]:after {
 
 /* Begin Tables */
 
-#zo-sveta-mozilly div {
-  display: inline-block;
-  width: 270px;
-  vertical-align: top;
-  padding: 0;
-  margin: 0 0 1em 0;
-}
-
-#zo-sveta-mozilly div.first {
-  padding-right: 6px;
-}
-
-#zo-sveta-mozilly h3,
-#zo-sveta-mozilly h4 {
+#feed-mozilla-cz h4 {
   text-align: left;
+}
+
+#feed-mozilla-cz .more {
+  display: block;
+  text-align: right;
 }
 
 .udaje td {
